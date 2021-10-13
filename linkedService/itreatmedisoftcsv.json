@@ -1,0 +1,11 @@
+{
+	"name": "itreatmedisoftcsv",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://itreatmedisoftcsv.blob.core.windows.net",
+			"accountKind": "StorageV2"
+		}
+	}
+}
