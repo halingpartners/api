@@ -6,10 +6,10 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "RestResource1",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -21,12 +21,8 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [
-				{
-					"name": "Select1"
-				}
-			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\thttpMethod: 'GET',\n\ttimeout: 30,\n\trequestInterval: 0,\n\tresponseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1\nsource1 select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
+			"transformations": [],
+			"script": "source(output(\n\t\t{Patient Name} as string,\n\t\t{Patient DOB} as string,\n\t\tFacility as string,\n\t\tPhysician as string,\n\t\t{Service date} as string,\n\t\t{ICD10 codes} as string,\n\t\t{Billing codes} as string,\n\t\tEncounter as string,\n\t\tBilled as string,\n\t\tCoded as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source2\nsource2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tpatientname = {Patient Name},\n\t\tfacility = Facility,\n\t\tclinician = Physician,\n\t\tservicedate = {Service date},\n\t\tICD10 = {ICD10 codes},\n\t\tbillingcodes = {Billing codes},\n\t\tencounterid = Encounter,\n\t\tbilled = Billed,\n\t\tcoded = Coded\n\t)) ~> sink1"
 		}
 	}
 }
