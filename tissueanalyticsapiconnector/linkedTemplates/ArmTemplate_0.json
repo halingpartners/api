@@ -14,18 +14,6 @@
 		"itreatmedisoftcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
-		},
-		"tissueanalyticsapi_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'tissueanalyticsapi'"
-		},
-		"tissueanalyticsapi_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://healingpartners.tissue-analytics.io/coreapi"
-		},
-		"tissueanalyticsapi_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "northlake_analytics"
 		}
 	},
 	"variables": {
@@ -54,26 +42,6 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('itreatmedisoftcsv_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tissueanalyticsapi')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('tissueanalyticsapi_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Basic",
-					"userName": "[parameters('tissueanalyticsapi_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('tissueanalyticsapi_password')]"
-					}
 				}
 			},
 			"dependsOn": []
@@ -260,24 +228,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/itreatmedisoftcsv')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "tissueanalyticsapi",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "RestResource",
-				"typeProperties": {},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/tissueanalyticsapi')]"
 			]
 		},
 		{

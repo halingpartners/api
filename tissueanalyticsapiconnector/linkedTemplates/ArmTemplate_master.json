@@ -15,18 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
 		},
-		"tissueanalyticsapi_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'tissueanalyticsapi'"
-		},
-		"tissueanalyticsapi_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://healingpartners.tissue-analytics.io/coreapi"
-		},
-		"tissueanalyticsapi_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "northlake_analytics"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -59,15 +47,6 @@
 					},
 					"itreatmedisoftcsv_connectionString": {
 						"value": "[parameters('itreatmedisoftcsv_connectionString')]"
-					},
-					"tissueanalyticsapi_password": {
-						"value": "[parameters('tissueanalyticsapi_password')]"
-					},
-					"tissueanalyticsapi_properties_typeProperties_url": {
-						"value": "[parameters('tissueanalyticsapi_properties_typeProperties_url')]"
-					},
-					"tissueanalyticsapi_properties_typeProperties_userName": {
-						"value": "[parameters('tissueanalyticsapi_properties_typeProperties_userName')]"
 					}
 				}
 			},

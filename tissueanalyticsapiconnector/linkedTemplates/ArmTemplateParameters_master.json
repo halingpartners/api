@@ -11,15 +11,6 @@
 		"itreatmedisoftcsv_connectionString": {
 			"value": ""
 		},
-		"tissueanalyticsapi_password": {
-			"value": ""
-		},
-		"tissueanalyticsapi_properties_typeProperties_url": {
-			"value": "https://healingpartners.tissue-analytics.io/coreapi"
-		},
-		"tissueanalyticsapi_properties_typeProperties_userName": {
-			"value": "northlake_analytics"
-		},
 		"containerUri": {
 			"value": ""
 		},
