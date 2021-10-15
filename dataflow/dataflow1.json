@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "source3"
 				}
 			],
 			"sinks": [
@@ -19,10 +26,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					},
+					"name": "sink2"
 				}
 			],
 			"transformations": [],
-			"script": "source(output(\n\t\t{Patient Name} as string,\n\t\t{Patient DOB} as string,\n\t\tFacility as string,\n\t\tPhysician as string,\n\t\t{Service date} as string,\n\t\t{ICD10 codes} as string,\n\t\t{Billing codes} as string,\n\t\tEncounter as string,\n\t\tBilled as string,\n\t\tCoded as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source2\nsource2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tpatientname = {Patient Name},\n\t\tfacility = Facility,\n\t\tclinician = Physician,\n\t\tICD10 = {ICD10 codes},\n\t\tbillingcodes = {Billing codes},\n\t\tencounterid = Encounter,\n\t\tbilled = Billed,\n\t\tcoded = Coded,\n\t\tvisitdate = {Service date}\n\t)) ~> sink1"
+			"script": "source(output(\n\t\t{Patient Name} as string,\n\t\t{Patient DOB} as string,\n\t\tFacility as string,\n\t\tPhysician as string,\n\t\t{Service date} as string,\n\t\t{ICD10 codes} as string,\n\t\t{Billing codes} as string,\n\t\tEncounter as string,\n\t\tBilled as string,\n\t\tCoded as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source2\nsource(output(\n\t\tProvider as string,\n\t\tCharges as string,\n\t\tPayments as string,\n\t\tAdjustments as string,\n\t\tUnits as string,\n\t\t{Net Effect} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source3\nsource2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tpatientname = {Patient Name},\n\t\tfacility = Facility,\n\t\tclinician = Physician,\n\t\tICD10 = {ICD10 codes},\n\t\tbillingcodes = {Billing codes},\n\t\tencounterid = Encounter,\n\t\tbilled = Billed,\n\t\tcoded = Coded,\n\t\tvisitdate = {Service date}\n\t)) ~> sink1\nsource3 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tprovider as string,\n\t\trevenue as integer,\n\t\tadjustments as integer,\n\t\tcash as integer\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tprovider = Provider,\n\t\trevenue = Charges,\n\t\tadjustments = Adjustments,\n\t\tcash = Payments\n\t)) ~> sink2"
 		}
 	}
 }
