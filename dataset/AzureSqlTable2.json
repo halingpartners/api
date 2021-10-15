@@ -1,0 +1,36 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "provider",
+				"type": "text"
+			},
+			{
+				"name": "revenue",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "adjustments",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cash",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "clinic"
+		}
+	}
+}
