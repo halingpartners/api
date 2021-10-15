@@ -8,10 +8,10 @@
 		"healingpartnersreporting_connectionString": {
 			"value": ""
 		},
-		"tissueanalyticsapi_password": {
+		"itreatmedisoftcsv_connectionString": {
 			"value": ""
 		},
-		"itreatmedisoftcsv_connectionString": {
+		"tissueanalyticsapi_password": {
 			"value": ""
 		},
 		"tissueanalyticsapi_properties_typeProperties_url": {

@@ -11,13 +11,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'healingpartnersreporting'"
 		},
-		"tissueanalyticsapi_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'tissueanalyticsapi'"
-		},
 		"itreatmedisoftcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
+		},
+		"tissueanalyticsapi_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'tissueanalyticsapi'"
 		},
 		"tissueanalyticsapi_properties_typeProperties_url": {
 			"type": "string",
@@ -57,11 +57,11 @@
 					"healingpartnersreporting_connectionString": {
 						"value": "[parameters('healingpartnersreporting_connectionString')]"
 					},
-					"tissueanalyticsapi_password": {
-						"value": "[parameters('tissueanalyticsapi_password')]"
-					},
 					"itreatmedisoftcsv_connectionString": {
 						"value": "[parameters('itreatmedisoftcsv_connectionString')]"
+					},
+					"tissueanalyticsapi_password": {
+						"value": "[parameters('tissueanalyticsapi_password')]"
 					},
 					"tissueanalyticsapi_properties_typeProperties_url": {
 						"value": "[parameters('tissueanalyticsapi_properties_typeProperties_url')]"
