@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://healingpartners.tissue-analytics.io/coreapi",
+			"url": "https://healingpartners.tissue-analytics.io",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Basic",
 			"userName": "northlake_analytics",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlRJU1NVRUFOQUxZVElDU0FQSUNPTk5FQ1RPUl8xZjE1ZjFmZi1jODdiLTRjZjMtODZmYy1mZDljOTU1Y2IzNDAiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlRJU1NVRUFOQUxZVElDU0FQSUNPTk5FQ1RPUl81NGM0Zjg1YS00ZTYwLTQ3MDgtYmE2YS05N2NkNWU5N2ZhN2EiDQp9"
 		}
 	}
 }
