@@ -7,7 +7,46 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "patientname",
+				"type": "text"
+			},
+			{
+				"name": "clinician",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			},
+			{
+				"name": "ICD10",
+				"type": "text"
+			},
+			{
+				"name": "billingcodes",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "encounterid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "billed",
+				"type": "text"
+			},
+			{
+				"name": "coded",
+				"type": "text"
+			},
+			{
+				"name": "visitdate",
+				"type": "text"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "ops"
