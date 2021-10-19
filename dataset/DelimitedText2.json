@@ -10,11 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "codes_09-07-2021_10-19-2021_1634676888.csv",
-				"container": "itreat"
+				"fileName": "hp_daily_wound_report_20211019.csv",
+				"container": "tissueanalytics"
 			},
-			"columnDelimiter": ";",
-			"rowDelimiter": "\n",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
