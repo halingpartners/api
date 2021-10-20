@@ -116,6 +116,30 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "Encounter",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "encounterid",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Billing codes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "billingcodes",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,
@@ -127,13 +151,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "DelimitedText14",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "AzureSqlTable16",
 						"type": "DatasetReference"
 					}
 				]
