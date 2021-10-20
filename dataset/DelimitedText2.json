@@ -11,6 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "hp_daily_wound_report_20211019.csv",
+				"folderPath": "Data 1",
 				"container": "tissueanalytics"
 			},
 			"columnDelimiter": ",",
