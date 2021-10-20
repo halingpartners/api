@@ -1,0 +1,52 @@
+{
+	"name": "DelimitedText5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itreatmedisoftcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Adj 2.csv",
+				"container": "medisoft"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Charge Entry Number",
+				"type": "String"
+			},
+			{
+				"name": "Chart Number",
+				"type": "String"
+			},
+			{
+				"name": "Payment Date",
+				"type": "String"
+			},
+			{
+				"name": "Payment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Procedure Code",
+				"type": "String"
+			},
+			{
+				"name": "Transaction Type",
+				"type": "String"
+			},
+			{
+				"name": "Who Paid",
+				"type": "String"
+			}
+		]
+	}
+}
