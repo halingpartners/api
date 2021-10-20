@@ -788,6 +788,101 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itreatmedisoftcsv",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Adj 1.csv",
+						"container": "medisoft"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Charge Entry Number",
+						"type": "String"
+					},
+					{
+						"name": "Chart Number",
+						"type": "String"
+					},
+					{
+						"name": "Payment Date",
+						"type": "String"
+					},
+					{
+						"name": "Payment Amount",
+						"type": "String"
+					},
+					{
+						"name": "Procedure Code",
+						"type": "String"
+					},
+					{
+						"name": "Transaction Type",
+						"type": "String"
+					},
+					{
+						"name": "Who Paid",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/itreatmedisoftcsv')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "paydate",
+						"type": "text"
+					},
+					{
+						"name": "amount",
+						"type": "text"
+					},
+					{
+						"name": "procedurecode",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "cash"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/pipeline3')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -1580,7 +1675,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline5')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline6')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1674,14 +1769,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText3",
+								"referenceName": "DelimitedText4",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable5",
+								"referenceName": "AzureSqlTable6",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1695,8 +1790,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable5')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText4')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable6')]"
 			]
 		}
 	]
