@@ -1,0 +1,33 @@
+{
+	"name": "AzureSqlTable11",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "billingdate",
+				"type": "text"
+			},
+			{
+				"name": "balance",
+				"type": "text"
+			},
+			{
+				"name": "revenue",
+				"type": "text"
+			},
+			{
+				"name": "entrynumber",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "revenue"
+		}
+	}
+}
