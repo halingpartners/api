@@ -1,0 +1,160 @@
+{
+	"name": "DelimitedText10",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itreatmedisoftcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "aging3.csv",
+				"container": "medisoft"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Entry Number",
+				"type": "String"
+			},
+			{
+				"name": "Balance",
+				"type": "String"
+			},
+			{
+				"name": "Aging",
+				"type": "String"
+			},
+			{
+				"name": "Provider",
+				"type": "String"
+			},
+			{
+				"name": "Curr_Resp",
+				"type": "String"
+			},
+			{
+				"name": "Ins_Class_Resp",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Date From",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "Procedure Code",
+				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
+			},
+			{
+				"name": "Ins1AmtPd",
+				"type": "String"
+			},
+			{
+				"name": "Ins2AmtPd",
+				"type": "String"
+			},
+			{
+				"name": "Ins3AmtPd",
+				"type": "String"
+			},
+			{
+				"name": "GuarAmtPd",
+				"type": "String"
+			},
+			{
+				"name": "AdjAmt",
+				"type": "String"
+			},
+			{
+				"name": "Ins1",
+				"type": "String"
+			},
+			{
+				"name": "Class1",
+				"type": "String"
+			},
+			{
+				"name": "Ins2",
+				"type": "String"
+			},
+			{
+				"name": "Class2",
+				"type": "String"
+			},
+			{
+				"name": "Ins3",
+				"type": "String"
+			},
+			{
+				"name": "Class3",
+				"type": "String"
+			},
+			{
+				"name": "Chart Number",
+				"type": "String"
+			},
+			{
+				"name": "Guarantor",
+				"type": "String"
+			},
+			{
+				"name": "Claim Number",
+				"type": "String"
+			},
+			{
+				"name": "Primary Billing Date",
+				"type": "String"
+			},
+			{
+				"name": "Secondary Billing Date",
+				"type": "String"
+			},
+			{
+				"name": "Tertiary Billing Date",
+				"type": "String"
+			},
+			{
+				"name": "Print Patient Statements",
+				"type": "String"
+			},
+			{
+				"name": "Facility",
+				"type": "String"
+			},
+			{
+				"name": "Diag1",
+				"type": "String"
+			},
+			{
+				"name": "Diag2",
+				"type": "String"
+			},
+			{
+				"name": "Diag3",
+				"type": "String"
+			},
+			{
+				"name": "Diag4",
+				"type": "String"
+			}
+		]
+	}
+}
