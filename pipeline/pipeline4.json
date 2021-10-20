@@ -623,18 +623,6 @@
 							},
 							{
 								"source": {
-									"name": "wound_started",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "woundstatus",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
 									"name": "facility",
 									"type": "String",
 									"physicalType": "String"
