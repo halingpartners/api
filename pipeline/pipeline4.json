@@ -143,18 +143,6 @@
 							},
 							{
 								"source": {
-									"name": "last_name10",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "max_total_area",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
 									"name": "min_total_area",
 									"type": "String",
 									"physicalType": "String"
