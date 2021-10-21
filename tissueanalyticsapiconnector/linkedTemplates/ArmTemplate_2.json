@@ -96,6 +96,18 @@
 											"type": "String",
 											"physicalType": "text"
 										}
+									},
+									{
+										"source": {
+											"name": "Transaction Type",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "type",
+											"type": "String",
+											"physicalType": "text"
+										}
 									}
 								],
 								"typeConversion": true,

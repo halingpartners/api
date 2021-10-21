@@ -1532,6 +1532,18 @@
 											"type": "String",
 											"physicalType": "text"
 										}
+									},
+									{
+										"source": {
+											"name": "Transaction Type",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "type",
+											"type": "String",
+											"physicalType": "text"
+										}
 									}
 								],
 								"typeConversion": true,
@@ -2610,6 +2622,10 @@
 					},
 					{
 						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
 						"type": "text"
 					}
 				],
