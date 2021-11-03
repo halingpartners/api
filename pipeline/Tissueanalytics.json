@@ -311,7 +311,7 @@
 							},
 							{
 								"source": {
-									"name": "Slough (%)",
+									"name": "% slough/eschar",
 									"type": "String",
 									"physicalType": "String"
 								},
