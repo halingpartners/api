@@ -911,6 +911,10 @@
 					{
 						"name": "procedurecode",
 						"type": "text"
+					},
+					{
+						"name": "type",
+						"type": "text"
 					}
 				],
 				"typeProperties": {
@@ -948,6 +952,10 @@
 					},
 					{
 						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
 						"type": "text"
 					}
 				],
