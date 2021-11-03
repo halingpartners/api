@@ -1079,30 +1079,6 @@
 									},
 									{
 										"source": {
-											"name": "first_name1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "patient_firtsname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "last_name2",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "patient_lastname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
 											"name": "mrn",
 											"type": "String",
 											"physicalType": "String"
