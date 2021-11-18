@@ -13,6 +13,123 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Medisoft6')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Primary Billing Date",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "billingdate",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Balance",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "balance",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Amount",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "revenue",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Entry Number",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "entrynumber",
+											"type": "String",
+											"physicalType": "text"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText9",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable11",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Medisoft7')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -298,6 +415,30 @@
 									},
 									{
 										"source": {
+											"name": "first_namepatient",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "patient_firtsname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "last_namepatient",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "patient_lastname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
 											"name": "mrn",
 											"type": "String",
 											"physicalType": "String"
@@ -340,6 +481,30 @@
 										},
 										"sink": {
 											"name": "last_visit_date",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "first_nameclinician",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician_first_name",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "last_nameclinician",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician_last_name",
 											"type": "String",
 											"physicalType": "text"
 										}
