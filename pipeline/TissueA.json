@@ -48,6 +48,30 @@
 							},
 							{
 								"source": {
+									"name": "first_namepatient",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_firtsname",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "last_namepatient",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_lastname",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
 									"name": "mrn",
 									"type": "String",
 									"physicalType": "String"
@@ -90,6 +114,30 @@
 								},
 								"sink": {
 									"name": "last_visit_date",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "first_nameclinician",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "clinician_first_name",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "last_nameclinician",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "clinician_last_name",
 									"type": "String",
 									"physicalType": "text"
 								}
