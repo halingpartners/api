@@ -604,30 +604,6 @@
 									},
 									{
 										"source": {
-											"name": "first_nameclinician",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clinician_first_name",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "last_nameclinician",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clinician_last_name",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
 											"name": "max_total_area",
 											"type": "String",
 											"physicalType": "String"
