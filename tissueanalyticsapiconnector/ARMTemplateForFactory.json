@@ -632,6 +632,42 @@
 											"type": "String",
 											"physicalType": "text"
 										}
+									},
+									{
+										"source": {
+											"name": "Aging",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "aging",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Age",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "agebucket",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Facility",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "facility",
+											"type": "String",
+											"physicalType": "text"
+										}
 									}
 								],
 								"typeConversion": true,
@@ -749,6 +785,42 @@
 										},
 										"sink": {
 											"name": "entrynumber",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Aging",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "aging",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Age",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "agebucket",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Facility",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "facility",
 											"type": "String",
 											"physicalType": "text"
 										}
