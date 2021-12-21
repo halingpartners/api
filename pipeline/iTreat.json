@@ -49,18 +49,6 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Physician",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "clinician",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
 									"name": "Facility",
 									"type": "String",
 									"physicalType": "String"
@@ -150,6 +138,16 @@
 								},
 								"sink": {
 									"name": "patientname",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Physician",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "clinician",
 									"physicalType": "text"
 								}
 							}
