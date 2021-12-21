@@ -1345,18 +1345,6 @@
 								"mappings": [
 									{
 										"source": {
-											"name": "Patient Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "patientname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
 											"name": "Physician",
 											"type": "String",
 											"physicalType": "String"
@@ -1448,6 +1436,16 @@
 										"sink": {
 											"name": "billingcodes",
 											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Patient Name",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "patientname",
 											"physicalType": "text"
 										}
 									}
