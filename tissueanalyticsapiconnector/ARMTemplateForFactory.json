@@ -1207,6 +1207,19 @@
 							},
 							"enableStaging": false,
 							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "itreatmedisoftcsv",
+										"type": "LinkedServiceReference"
+									}
+								}
+							},
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -1854,7 +1867,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText16')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]",
+				"[concat(variables('factoryId'), '/linkedServices/itreatmedisoftcsv')]"
 			]
 		},
 		{
@@ -1908,18 +1922,6 @@
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
-									{
-										"source": {
-											"name": "Physician",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clinician",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
 									{
 										"source": {
 											"name": "Facility",
@@ -2011,6 +2013,16 @@
 										},
 										"sink": {
 											"name": "patientname",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Physician",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician",
 											"physicalType": "text"
 										}
 									}

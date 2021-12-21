@@ -659,6 +659,19 @@
 							},
 							"enableStaging": false,
 							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "itreatmedisoftcsv",
+										"type": "LinkedServiceReference"
+									}
+								}
+							},
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -1359,18 +1372,6 @@
 								"mappings": [
 									{
 										"source": {
-											"name": "Physician",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clinician",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
 											"name": "Facility",
 											"type": "String",
 											"physicalType": "String"
@@ -1460,6 +1461,16 @@
 										},
 										"sink": {
 											"name": "patientname",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Physician",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician",
 											"physicalType": "text"
 										}
 									}
