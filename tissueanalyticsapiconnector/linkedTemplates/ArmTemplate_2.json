@@ -689,7 +689,7 @@
 									},
 									{
 										"source": {
-											"name": "first_namepatient",
+											"name": "patientfirst_name",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -701,7 +701,7 @@
 									},
 									{
 										"source": {
-											"name": "last_namepatient",
+											"name": "patientlast_name",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -755,6 +755,30 @@
 										},
 										"sink": {
 											"name": "last_visit_date",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "clinicianfirst_name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician_first_name",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "clinicianlast_name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician_last_name",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -977,18 +1001,6 @@
 									},
 									{
 										"source": {
-											"name": "Creams / Ointments",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "creamsointments",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
 											"name": "Date Wound Acquired",
 											"type": "String",
 											"physicalType": "String"
@@ -1061,7 +1073,7 @@
 									},
 									{
 										"source": {
-											"name": "Elevate Legs to Level of heart or above for 30 Minutes",
+											"name": "Elevate Legs to Level of heart or above for 30 minutes",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1079,18 +1091,6 @@
 										},
 										"sink": {
 											"name": "etiology",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Gel Dressings Old",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "getdressingsold",
 											"type": "String",
 											"physicalType": "text"
 										}

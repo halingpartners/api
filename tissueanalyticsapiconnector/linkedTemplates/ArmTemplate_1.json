@@ -769,11 +769,11 @@
 						"type": "String"
 					},
 					{
-						"name": "first_namepatient",
+						"name": "patientfirst_name",
 						"type": "String"
 					},
 					{
-						"name": "last_namepatient",
+						"name": "patientlast_name",
 						"type": "String"
 					},
 					{
@@ -801,11 +801,11 @@
 						"type": "String"
 					},
 					{
-						"name": "first_nameclinician",
+						"name": "clinicianfirst_name",
 						"type": "String"
 					},
 					{
-						"name": "last_nameclinician",
+						"name": "clinicianlast_name",
 						"type": "String"
 					},
 					{
@@ -889,14 +889,6 @@
 						"type": "String"
 					},
 					{
-						"name": "Advanced Therapies Old",
-						"type": "String"
-					},
-					{
-						"name": "Assistive Devices",
-						"type": "String"
-					},
-					{
 						"name": "Cleanse Wound With",
 						"type": "String"
 					},
@@ -905,19 +897,7 @@
 						"type": "String"
 					},
 					{
-						"name": "Cloth Dressings Old",
-						"type": "String"
-					},
-					{
-						"name": "Compression Stockings",
-						"type": "String"
-					},
-					{
 						"name": "Consult With Old",
-						"type": "String"
-					},
-					{
-						"name": "Creams / Ointments",
 						"type": "String"
 					},
 					{
@@ -945,10 +925,6 @@
 						"type": "String"
 					},
 					{
-						"name": "Elevate Legs to Level of heart or above for 30 Minutes",
-						"type": "String"
-					},
-					{
 						"name": "Elevate Legs to Level of heart or above for 30 minutes",
 						"type": "String"
 					},
@@ -961,19 +937,11 @@
 						"type": "String"
 					},
 					{
-						"name": "Gel Dressings Old",
-						"type": "String"
-					},
-					{
 						"name": "Margin Detail",
 						"type": "String"
 					},
 					{
 						"name": "Odor",
-						"type": "String"
-					},
-					{
-						"name": "Offloading/Immobilization",
 						"type": "String"
 					},
 					{
@@ -994,18 +962,6 @@
 					},
 					{
 						"name": "Pressure Reduction/Offloading",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Culture/Biopsy",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Laboratory Testing",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Vascular/Radiology Testing:",
 						"type": "String"
 					},
 					{
