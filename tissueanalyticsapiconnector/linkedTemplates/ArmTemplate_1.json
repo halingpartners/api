@@ -2252,528 +2252,192 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Revenuetwo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
 					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Charge Entry Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "entrynumber",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "paydate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Amount",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "amount",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Procedure Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "procedurecode",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Transaction Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText4",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlTable6",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "aging",
+						"type": "text"
+					},
+					{
+						"name": "agebucket",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "revenuetwo"
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText4')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft2')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
 					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Charge Entry Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "entrynumber",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "paydate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Amount",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "amount",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Procedure Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "procedurecode",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Transaction Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText5",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlTable7",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "aging",
+						"type": "text"
+					},
+					{
+						"name": "agebucket",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "revenuethree"
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText5')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft3')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/revenuefour')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
 					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Charge Entry Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "entrynumber",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "paydate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Amount",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "amount",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Procedure Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "procedurecode",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Transaction Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText6",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlTable8",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "aging",
+						"type": "text"
+					},
+					{
+						"name": "agebucket",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "revenuefour"
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText6')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft4')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Cashtwo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
 					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Charge Entry Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "entrynumber",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "paydate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment Amount",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "amount",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Procedure Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "procedurecode",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Transaction Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText7",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlTable9",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "paydate",
+						"type": "text"
+					},
+					{
+						"name": "amount",
+						"type": "text"
+					},
+					{
+						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "cashtwo"
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText7')]"
-			]
+			"dependsOn": []
 		}
 	]
 }
