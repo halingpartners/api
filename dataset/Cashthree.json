@@ -1,0 +1,41 @@
+{
+	"name": "Cashthree",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "entrynumber",
+				"type": "text"
+			},
+			{
+				"name": "paydate",
+				"type": "text"
+			},
+			{
+				"name": "amount",
+				"type": "text"
+			},
+			{
+				"name": "procedurecode",
+				"type": "text"
+			},
+			{
+				"name": "type",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cashthree"
+		}
+	}
+}
