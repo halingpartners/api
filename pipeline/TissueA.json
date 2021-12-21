@@ -61,30 +61,6 @@
 							},
 							{
 								"source": {
-									"name": "first_namepatient",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "patient_firtsname",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
-									"name": "last_namepatient",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "patient_lastname",
-									"type": "String",
-									"physicalType": "text"
-								}
-							},
-							{
-								"source": {
 									"name": "mrn",
 									"type": "String",
 									"physicalType": "String"
@@ -656,6 +632,26 @@
 								"sink": {
 									"name": "dayswoundactive",
 									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "first_namepatient",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_firtsname",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "last_namepatient",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_lastname",
 									"physicalType": "text"
 								}
 							}
