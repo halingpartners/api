@@ -1,0 +1,45 @@
+{
+	"name": "Revenuetwo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "billingdate",
+				"type": "text"
+			},
+			{
+				"name": "balance",
+				"type": "text"
+			},
+			{
+				"name": "revenue",
+				"type": "text"
+			},
+			{
+				"name": "entrynumber",
+				"type": "text"
+			},
+			{
+				"name": "aging",
+				"type": "text"
+			},
+			{
+				"name": "agebucket",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "revenuetwo"
+		}
+	}
+}
