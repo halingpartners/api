@@ -1924,6 +1924,30 @@
 								"mappings": [
 									{
 										"source": {
+											"name": "Patient Name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "patientname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Physician",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
 											"name": "Facility",
 											"type": "String",
 											"physicalType": "String"
@@ -2003,26 +2027,6 @@
 										"sink": {
 											"name": "billingcodes",
 											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Patient Name",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "patientname",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Physician",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clinician",
 											"physicalType": "text"
 										}
 									}
@@ -3410,7 +3414,7 @@
 						"fileName": "codes_09-07-2021_10-19-2021_1634676888.csv",
 						"container": "itreat"
 					},
-					"columnDelimiter": ";",
+					"columnDelimiter": ",",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
