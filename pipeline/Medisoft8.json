@@ -133,7 +133,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable13",
+						"referenceName": "revenuefour",
 						"type": "DatasetReference"
 					}
 				]
