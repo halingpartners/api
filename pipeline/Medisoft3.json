@@ -103,7 +103,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText6",
+						"referenceName": "DelimitedText7",
 						"type": "DatasetReference"
 					}
 				],
