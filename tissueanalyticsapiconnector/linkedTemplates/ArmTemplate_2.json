@@ -13,7 +13,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Cashthree')]",
+			"name": "[concat(parameters('factoryName'), '/revenuefour')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -25,23 +25,27 @@
 				"type": "AzureSqlTable",
 				"schema": [
 					{
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
 						"name": "entrynumber",
 						"type": "text"
 					},
 					{
-						"name": "paydate",
+						"name": "aging",
 						"type": "text"
 					},
 					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
+						"name": "agebucket",
 						"type": "text"
 					},
 					{
@@ -51,13 +55,13 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "cashthree"
+					"table": "revenuefour"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/cashfour')]",
+			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -69,23 +73,27 @@
 				"type": "AzureSqlTable",
 				"schema": [
 					{
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
 						"name": "entrynumber",
 						"type": "text"
 					},
 					{
-						"name": "paydate",
+						"name": "aging",
 						"type": "text"
 					},
 					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
+						"name": "agebucket",
 						"type": "text"
 					},
 					{
@@ -95,7 +103,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "cashfour"
+					"table": "revenuethree"
 				}
 			},
 			"dependsOn": []
@@ -465,14 +473,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText6",
+								"referenceName": "DelimitedText7",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable8",
+								"referenceName": "Cashthree",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -594,14 +602,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText7",
+								"referenceName": "DelimitedText6",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable9",
+								"referenceName": "cashfour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -907,7 +915,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable11",
+								"referenceName": "Revenuetwo",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1060,7 +1068,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable12",
+								"referenceName": "revenuethree",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1073,7 +1081,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/revenuethree')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Medisoft8')]",
@@ -1213,7 +1223,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable13",
+								"referenceName": "revenuefour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1226,7 +1236,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/revenuefour')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/TissueA')]",

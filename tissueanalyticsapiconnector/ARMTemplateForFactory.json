@@ -391,14 +391,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText6",
+								"referenceName": "DelimitedText7",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable8",
+								"referenceName": "Cashthree",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -412,8 +412,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText6')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable8')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText7')]",
+				"[concat(variables('factoryId'), '/datasets/Cashthree')]"
 			]
 		},
 		{
@@ -523,14 +523,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText7",
+								"referenceName": "DelimitedText6",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable9",
+								"referenceName": "cashfour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -544,8 +544,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText7')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable9')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText6')]",
+				"[concat(variables('factoryId'), '/datasets/cashfour')]"
 			]
 		},
 		{
@@ -842,7 +842,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable11",
+								"referenceName": "Revenuetwo",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -857,7 +857,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText9')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable11')]"
+				"[concat(variables('factoryId'), '/datasets/Revenuetwo')]"
 			]
 		},
 		{
@@ -998,7 +998,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable12",
+								"referenceName": "revenuethree",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1013,7 +1013,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText10')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable12')]"
+				"[concat(variables('factoryId'), '/datasets/revenuethree')]"
 			]
 		},
 		{
@@ -1154,7 +1154,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable13",
+								"referenceName": "revenuefour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1169,7 +1169,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText11')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable13')]"
+				"[concat(variables('factoryId'), '/datasets/revenuefour')]"
 			]
 		},
 		{
@@ -2962,6 +2962,98 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "cash"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Cashthree')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "paydate",
+						"type": "text"
+					},
+					{
+						"name": "amount",
+						"type": "text"
+					},
+					{
+						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "cashthree"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Cashtwo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "paydate",
+						"type": "text"
+					},
+					{
+						"name": "amount",
+						"type": "text"
+					},
+					{
+						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "cashtwo"
 				}
 			},
 			"dependsOn": [
@@ -4960,6 +5052,56 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Revenuetwo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "aging",
+						"type": "text"
+					},
+					{
+						"name": "agebucket",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "revenuetwo"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/TissueAnalyticsHistoric')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -5273,53 +5415,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/healingpartnersreporting')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('healingpartnersreporting_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/itreatmedisoftcsv')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('itreatmedisoftcsv_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "AutoResolve",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Revenuetwo')]",
+			"name": "[concat(parameters('factoryName'), '/cashfour')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -5331,27 +5427,23 @@
 				"type": "AzureSqlTable",
 				"schema": [
 					{
-						"name": "billingdate",
-						"type": "text"
-					},
-					{
-						"name": "balance",
-						"type": "text"
-					},
-					{
-						"name": "revenue",
-						"type": "text"
-					},
-					{
 						"name": "entrynumber",
 						"type": "text"
 					},
 					{
-						"name": "aging",
+						"name": "paydate",
 						"type": "text"
 					},
 					{
-						"name": "agebucket",
+						"name": "amount",
+						"type": "text"
+					},
+					{
+						"name": "procedurecode",
+						"type": "text"
+					},
+					{
+						"name": "type",
 						"type": "text"
 					},
 					{
@@ -5361,57 +5453,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "revenuetwo"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "billingdate",
-						"type": "text"
-					},
-					{
-						"name": "balance",
-						"type": "text"
-					},
-					{
-						"name": "revenue",
-						"type": "text"
-					},
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "aging",
-						"type": "text"
-					},
-					{
-						"name": "agebucket",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "revenuethree"
+					"table": "cashfour"
 				}
 			},
 			"dependsOn": [
@@ -5469,7 +5511,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Cashtwo')]",
+			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -5481,23 +5523,27 @@
 				"type": "AzureSqlTable",
 				"schema": [
 					{
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
 						"name": "entrynumber",
 						"type": "text"
 					},
 					{
-						"name": "paydate",
+						"name": "aging",
 						"type": "text"
 					},
 					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
+						"name": "agebucket",
 						"type": "text"
 					},
 					{
@@ -5507,7 +5553,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "cashtwo"
+					"table": "revenuethree"
 				}
 			},
 			"dependsOn": [
@@ -5515,96 +5561,50 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Cashthree')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/healingpartnersreporting')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
+				"type": "AzureSqlDatabase",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "cashthree"
+					"connectionString": "[parameters('healingpartnersreporting_connectionString')]"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/cashfour')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/itreatmedisoftcsv')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
+				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "cashfour"
+					"connectionString": "[parameters('itreatmedisoftcsv_connectionString')]"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
