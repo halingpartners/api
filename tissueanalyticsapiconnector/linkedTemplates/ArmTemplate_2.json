@@ -1617,6 +1617,18 @@
 									},
 									{
 										"source": {
+											"name": "Creams / Ointments",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "creamsointments",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
 											"name": "Date Wound Acquired",
 											"type": "String",
 											"physicalType": "String"
@@ -1689,7 +1701,7 @@
 									},
 									{
 										"source": {
-											"name": "Elevate Legs to Level of heart or above for 30 minutes",
+											"name": "Elevate Legs to Level of heart or above for 30 Minutes",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1707,6 +1719,18 @@
 										},
 										"sink": {
 											"name": "etiology",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Gel Dressings Old",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "getdressingsold",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -1899,6 +1923,18 @@
 										},
 										"sink": {
 											"name": "dayswoundactive",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Width (cm)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "widthcm",
 											"type": "String",
 											"physicalType": "text"
 										}
