@@ -48,7 +48,11 @@
 				"type": "String"
 			},
 			{
-				"name": "Wound Number",
+				"name": "Body Location",
+				"type": "String"
+			},
+			{
+				"name": "wound_number",
 				"type": "String"
 			},
 			{
@@ -144,6 +148,14 @@
 				"type": "String"
 			},
 			{
+				"name": "Advanced Therapies Old",
+				"type": "String"
+			},
+			{
+				"name": "Assistive Devices",
+				"type": "String"
+			},
+			{
 				"name": "Cleanse Wound With",
 				"type": "String"
 			},
@@ -152,7 +164,19 @@
 				"type": "String"
 			},
 			{
+				"name": "Cloth Dressings Old",
+				"type": "String"
+			},
+			{
+				"name": "Compression Stockings",
+				"type": "String"
+			},
+			{
 				"name": "Consult With Old",
+				"type": "String"
+			},
+			{
+				"name": "Creams / Ointments",
 				"type": "String"
 			},
 			{
@@ -180,6 +204,10 @@
 				"type": "String"
 			},
 			{
+				"name": "Elevate Legs to Level of heart or above for 30 Minutes",
+				"type": "String"
+			},
+			{
 				"name": "Elevate Legs to Level of heart or above for 30 minutes",
 				"type": "String"
 			},
@@ -192,11 +220,19 @@
 				"type": "String"
 			},
 			{
+				"name": "Gel Dressings Old",
+				"type": "String"
+			},
+			{
 				"name": "Margin Detail",
 				"type": "String"
 			},
 			{
 				"name": "Odor",
+				"type": "String"
+			},
+			{
+				"name": "Offloading/Immobilization",
 				"type": "String"
 			},
 			{
@@ -217,6 +253,18 @@
 			},
 			{
 				"name": "Pressure Reduction/Offloading",
+				"type": "String"
+			},
+			{
+				"name": "Recommended Culture/Biopsy",
+				"type": "String"
+			},
+			{
+				"name": "Recommended Laboratory Testing",
+				"type": "String"
+			},
+			{
+				"name": "Recommended Vascular/Radiology Testing:",
 				"type": "String"
 			},
 			{
