@@ -694,6 +694,42 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "Body Location",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "woundlocation",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "------------------------------------------",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "misc",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "wound_number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "woundnumber",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,

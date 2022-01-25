@@ -219,6 +219,22 @@
 			{
 				"name": "dayswoundactive",
 				"type": "text"
+			},
+			{
+				"name": "widthcm",
+				"type": "text"
+			},
+			{
+				"name": "woundlocation",
+				"type": "text"
+			},
+			{
+				"name": "misc",
+				"type": "text"
+			},
+			{
+				"name": "woundnumber",
+				"type": "text"
 			}
 		],
 		"typeProperties": {
