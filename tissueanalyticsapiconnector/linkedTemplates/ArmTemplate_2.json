@@ -1993,6 +1993,293 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Medisoft12')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Chart #",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "chartno",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Last Name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "lastname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "First Name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "firstname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "DOS",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "dos",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "CPT",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "cpt",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Charge",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "charge",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Ins1 Amt Pd",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "insoneamtpd",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Ins2 Amt Pd",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "instwoamtpd",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Ins3 Amt Pd",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "instthreeamtpd",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Guar Amt Pd",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "guaramtpd",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Total Pmt",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "totalpmt",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Adjustment",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "adj",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Balance",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "balance",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Facility",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "facility",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Fac State",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "state",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Initial Billing Date 1",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "initialbillingdateone",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Primary Billing Date",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "primarybillingdate",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Provider",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "provider",
+											"type": "String",
+											"physicalType": "text"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText20",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable20",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Medisoft2')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -2695,161 +2982,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText9')]",
 				"[concat(variables('factoryId'), '/datasets/Revenuetwo')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft7')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Primary Billing Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "billingdate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Balance",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "balance",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Amount",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "revenue",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Entry Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "entrynumber",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Aging",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "aging",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Age",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "agebucket",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Facility",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "facility",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText10",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "revenuethree",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/revenuethree')]"
 			]
 		}
 	]
