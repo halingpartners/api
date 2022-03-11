@@ -453,6 +453,215 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable17')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "arone"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable18')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "chartno",
+						"type": "text"
+					},
+					{
+						"name": "lastname",
+						"type": "text"
+					},
+					{
+						"name": "firstname",
+						"type": "text"
+					},
+					{
+						"name": "dos",
+						"type": "text"
+					},
+					{
+						"name": "cpt",
+						"type": "text"
+					},
+					{
+						"name": "charge",
+						"type": "text"
+					},
+					{
+						"name": "insoneamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instwoamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instthreeamtpd",
+						"type": "text"
+					},
+					{
+						"name": "guaramtpd",
+						"type": "text"
+					},
+					{
+						"name": "totalpmt",
+						"type": "text"
+					},
+					{
+						"name": "adj",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "state",
+						"type": "text"
+					},
+					{
+						"name": "initialbillingdateone",
+						"type": "text"
+					},
+					{
+						"name": "primarybillingdate",
+						"type": "text"
+					},
+					{
+						"name": "provider",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "artwo"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable19')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "chartno",
+						"type": "text"
+					},
+					{
+						"name": "lastname",
+						"type": "text"
+					},
+					{
+						"name": "firstname",
+						"type": "text"
+					},
+					{
+						"name": "dos",
+						"type": "text"
+					},
+					{
+						"name": "cpt",
+						"type": "text"
+					},
+					{
+						"name": "charge",
+						"type": "text"
+					},
+					{
+						"name": "insoneamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instwoamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instthreeamtpd",
+						"type": "text"
+					},
+					{
+						"name": "guaramtpd",
+						"type": "text"
+					},
+					{
+						"name": "totalpmt",
+						"type": "text"
+					},
+					{
+						"name": "adj",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "state",
+						"type": "text"
+					},
+					{
+						"name": "initialbillingdateone",
+						"type": "text"
+					},
+					{
+						"name": "primarybillingdate",
+						"type": "text"
+					},
+					{
+						"name": "provider",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "arthree"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -703,6 +912,100 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable20')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "chartno",
+						"type": "text"
+					},
+					{
+						"name": "lastname",
+						"type": "text"
+					},
+					{
+						"name": "firstname",
+						"type": "text"
+					},
+					{
+						"name": "dos",
+						"type": "text"
+					},
+					{
+						"name": "cpt",
+						"type": "text"
+					},
+					{
+						"name": "charge",
+						"type": "text"
+					},
+					{
+						"name": "insoneamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instwoamtpd",
+						"type": "text"
+					},
+					{
+						"name": "instthreeamtpd",
+						"type": "text"
+					},
+					{
+						"name": "guaramtpd",
+						"type": "text"
+					},
+					{
+						"name": "totalpmt",
+						"type": "text"
+					},
+					{
+						"name": "adj",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "state",
+						"type": "text"
+					},
+					{
+						"name": "initialbillingdateone",
+						"type": "text"
+					},
+					{
+						"name": "primarybillingdate",
+						"type": "text"
+					},
+					{
+						"name": "provider",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "arfour"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -852,178 +1155,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "cash"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable7')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "cash"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable8')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "cash"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable9')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "cash"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/healingpartnersreporting')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Cashthree')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "paydate",
-						"type": "text"
-					},
-					{
-						"name": "amount",
-						"type": "text"
-					},
-					{
-						"name": "procedurecode",
-						"type": "text"
-					},
-					{
-						"name": "type",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "cashthree"
 				}
 			},
 			"dependsOn": [

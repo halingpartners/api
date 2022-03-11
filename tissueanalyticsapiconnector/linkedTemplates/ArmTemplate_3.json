@@ -13,7 +13,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft 9')]",
+			"name": "[concat(parameters('factoryName'), '/Medisoft8')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -43,9 +43,7 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false
+								"type": "AzureSqlSink"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -53,144 +51,12 @@
 								"mappings": [
 									{
 										"source": {
-											"name": "Chart #",
+											"name": "Primary Billing Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "chartno",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Last Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "lastname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "First Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "firstname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "DOS",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "dos",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "CPT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "cpt",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Charge",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "charge",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Ins1 Amt Pd",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "insoneamtpd",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Ins2 Amt Pd",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "instwoamtpd",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Ins3 Amt Pd",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "instthreeamtpd",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Guar Amt Pd",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "guaramtpd",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Total Pmt",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "totalpmt",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Adjustment",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "adj",
+											"name": "billingdate",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -209,60 +75,60 @@
 									},
 									{
 										"source": {
+											"name": "Amount",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "revenue",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Entry Number",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "entrynumber",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Aging",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "aging",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Age",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "agebucket",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
 											"name": "Facility",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
 											"name": "facility",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Fac State",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "state",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Initial Billing Date 1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "initialbillingdateone",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Primary Billing Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "primarybillingdate",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Provider",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "provider",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -277,14 +143,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText17",
+								"referenceName": "DelimitedText11",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable17",
+								"referenceName": "revenuefour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -300,7 +166,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Medisoft10')]",
+			"name": "[concat(parameters('factoryName'), '/TissueA')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -330,166 +196,813 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false
+								"type": "AzureSqlSink"
 							},
 							"enableStaging": false,
+							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "itreatmedisoftcsv",
+										"type": "LinkedServiceReference"
+									}
+								}
+							},
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
 									{
 										"source": {
-											"name": "Chart #",
+											"name": "patient_id",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "chartno",
+											"name": "patient_id",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Last Name",
+											"name": "patientfirst_name",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "lastname",
+											"name": "patient_firtsname",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "First Name",
+											"name": "patientlast_name",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "firstname",
+											"name": "patient_lastname",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "DOS",
+											"name": "mrn",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "dos",
+											"name": "mrn",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "CPT",
+											"name": "Last Care Setting",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "cpt",
+											"name": "last_care_setting",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Charge",
+											"name": "wound_started",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "charge",
+											"name": "wound_started",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Ins1 Amt Pd",
+											"name": "Last Visit Date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "insoneamtpd",
+											"name": "last_visit_date",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Ins2 Amt Pd",
+											"name": "clinicianfirst_name",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "instwoamtpd",
+											"name": "clinician_first_name",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Ins3 Amt Pd",
+											"name": "clinicianlast_name",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "instthreeamtpd",
+											"name": "clinician_last_name",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Guar Amt Pd",
+											"name": "max_total_area",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "guaramtpd",
+											"name": "max_total_area",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Total Pmt",
+											"name": "min_total_area",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "totalpmt",
+											"name": "min_total_area",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Adjustment",
+											"name": "Area (cm^2)",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "adj",
+											"name": "areacmsq",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Balance",
+											"name": "Length (cm)",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "balance",
+											"name": "lengthcm",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Necrotic Tissue (%)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "necrotictissueperc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Granulation (%)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "granulationperc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Epithelium (%)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "epitheliumperc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Slough (%)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "sloughperc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Other Tissue (%)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "othertissueperc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "No Dot Present",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "no_dot_present",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "No Wound Detected",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "no_wound_detected",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Healing Rate",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "healingrate",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "% epithelialization",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "percepithelizatoin",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "% granulation",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "percgranulation",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "% slough/eschar",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "percslough",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Acquired in House?",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "acquired_in_house",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Additional woundbed details",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "additional_woundbed_details",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Cleanse Wound With",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "cleanse_wound_with",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Creams / Ointments",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "creamsointments",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Date Wound Acquired",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "date_wound_acquired",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Depth (cm)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "depthcm",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Drain Amount",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "drainamount",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Drain Description",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "draindesc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Dressing Change Frequency",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "dressingchangefrequency",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Dressings",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "dressings",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Elevate Legs to Level of heart or above for 30 Minutes",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "legelevationneeded",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Etiology",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "etiology",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Gel Dressings Old",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "getdressingsold",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Margin Detail",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "margindetail",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Odor",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "odor",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Other",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "other",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Pain",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "pain",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Periwound",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "periwound",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Pressure Reduction",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "pressurereduction",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Room Number",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "roomnumber",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Secondary Dressing",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "secondarydressing",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Stalled wound healing cycle despite treatment (PER RAI MANUAL)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "stalledwound",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Tunneling (cm)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "tunnelingcm",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Tunneling Description",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "tunnelingdesc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Undermining (cm)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "underminingcm",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Undermining Description",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "underminingdesc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Wound Status",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "woundstatus",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "facility",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "facility",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Days Wound Active",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "dayswoundactive",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Width (cm)",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "widthcm",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Body Location",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "woundlocation",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "------------------------------------------",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "misc",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "wound_number",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "woundnumber",
+											"type": "String",
+											"physicalType": "text"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText16",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/iTreat')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"enableSkipIncompatibleRow": true,
+							"logSettings": {
+								"enableCopyActivityLog": true,
+								"copyActivityLogSettings": {
+									"logLevel": "Warning",
+									"enableReliableLogging": false
+								},
+								"logLocationSettings": {
+									"linkedServiceName": {
+										"referenceName": "itreatmedisoftcsv",
+										"type": "LinkedServiceReference"
+									}
+								}
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Patient Name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "patientname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Physician",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "clinician",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -508,48 +1021,72 @@
 									},
 									{
 										"source": {
-											"name": "Fac State",
+											"name": "ICD10 codes",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "state",
+											"name": "ICD10",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Initial Billing Date 1",
+											"name": "Billed",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "initialbillingdateone",
+											"name": "billed",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Primary Billing Date",
+											"name": "Coded",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "primarybillingdate",
+											"name": "coded",
 											"type": "String",
 											"physicalType": "text"
 										}
 									},
 									{
 										"source": {
-											"name": "Provider",
+											"name": "Service date",
 											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "provider",
+											"name": "visitdate",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Encounter",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "encounterid",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Billing codes",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "billingcodes",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -564,14 +1101,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "DelimitedText18",
+								"referenceName": "DelimitedText14",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "AzureSqlTable18",
+								"referenceName": "AzureSqlTable16",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
