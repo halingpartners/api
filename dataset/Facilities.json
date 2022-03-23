@@ -1,0 +1,33 @@
+{
+	"name": "Facilities",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "owner",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			},
+			{
+				"name": "regionalclinicallead",
+				"type": "text"
+			},
+			{
+				"name": "region",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "facilities"
+		}
+	}
+}
