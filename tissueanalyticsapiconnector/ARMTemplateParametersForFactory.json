@@ -5,11 +5,20 @@
 		"factoryName": {
 			"value": "tissueanalyticsapiconnector"
 		},
+		"HttpServer1_password": {
+			"value": ""
+		},
 		"healingpartnersreporting_connectionString": {
 			"value": ""
 		},
 		"itreatmedisoftcsv_connectionString": {
 			"value": ""
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://ltchealingpartners-my.sharepoint.com/:x:/r/personal/rritchie_healing-partners_com/Documents/Active_Facilities_Data_2.8.22.xlsx"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"value": "BHinson@ltchealingpartners.onmicrosoft.com"
 		}
 	}
 }

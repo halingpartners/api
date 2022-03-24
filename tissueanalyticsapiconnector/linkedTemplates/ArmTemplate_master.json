@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "tissueanalyticsapiconnector"
 		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
+		},
 		"healingpartnersreporting_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'healingpartnersreporting'"
@@ -14,6 +18,14 @@
 		"itreatmedisoftcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ltchealingpartners-my.sharepoint.com/:x:/r/personal/rritchie_healing-partners_com/Documents/Active_Facilities_Data_2.8.22.xlsx"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "BHinson@ltchealingpartners.onmicrosoft.com"
 		},
 		"containerUri": {
 			"type": "string",
@@ -42,11 +54,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
+					},
 					"healingpartnersreporting_connectionString": {
 						"value": "[parameters('healingpartnersreporting_connectionString')]"
 					},
 					"itreatmedisoftcsv_connectionString": {
 						"value": "[parameters('itreatmedisoftcsv_connectionString')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
