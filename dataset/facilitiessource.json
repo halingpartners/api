@@ -20,24 +20,35 @@
 		},
 		"schema": [
 			{
+				"name": "Region",
 				"type": "String"
 			},
 			{
+				"name": "Facility ",
 				"type": "String"
 			},
 			{
+				"name": "Bed Size",
 				"type": "String"
 			},
 			{
+				"name": "Operator",
 				"type": "String"
 			},
 			{
+				"name": "Owner",
 				"type": "String"
 			},
 			{
+				"name": "Regional Clinical Lead",
 				"type": "String"
 			},
 			{
+				"name": "RDCO",
+				"type": "String"
+			},
+			{
+				"name": "iTreat Facility Name",
 				"type": "String"
 			}
 		]

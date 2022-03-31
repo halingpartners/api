@@ -49,7 +49,7 @@
 							},
 							{
 								"source": {
-									"name": "Facility",
+									"name": "Facility ",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -79,6 +79,18 @@
 								},
 								"sink": {
 									"name": "region",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "iTreat Facility Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "itreat",
 									"type": "String",
 									"physicalType": "text"
 								}

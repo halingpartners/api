@@ -23,6 +23,14 @@
 			{
 				"name": "region",
 				"type": "text"
+			},
+			{
+				"name": "tissueanalytics",
+				"type": "text"
+			},
+			{
+				"name": "itreat",
+				"type": "text"
 			}
 		],
 		"typeProperties": {
