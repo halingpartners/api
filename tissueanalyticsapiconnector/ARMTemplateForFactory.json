@@ -85,7 +85,7 @@
 									},
 									{
 										"source": {
-											"name": "Facility",
+											"name": "Facility ",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -115,6 +115,18 @@
 										},
 										"sink": {
 											"name": "region",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "iTreat Facility Name",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "itreat",
 											"type": "String",
 											"physicalType": "text"
 										}
@@ -7144,6 +7156,14 @@
 					{
 						"name": "region",
 						"type": "text"
+					},
+					{
+						"name": "tissueanalytics",
+						"type": "text"
+					},
+					{
+						"name": "itreat",
+						"type": "text"
 					}
 				],
 				"typeProperties": {
@@ -7565,6 +7585,67 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/facilitiessource')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itreatmedisoftcsv",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Active_Facilities_Data_2.8.22.csv",
+						"container": "facilities"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Region",
+						"type": "String"
+					},
+					{
+						"name": "Facility ",
+						"type": "String"
+					},
+					{
+						"name": "Bed Size",
+						"type": "String"
+					},
+					{
+						"name": "Operator",
+						"type": "String"
+					},
+					{
+						"name": "Owner",
+						"type": "String"
+					},
+					{
+						"name": "Regional Clinical Lead",
+						"type": "String"
+					},
+					{
+						"name": "RDCO",
+						"type": "String"
+					},
+					{
+						"name": "iTreat Facility Name",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/itreatmedisoftcsv')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/revenuefour')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -7739,56 +7820,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/facilitiessource')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "itreatmedisoftcsv",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "Active_Facilities_Data_2.8.22.csv",
-						"container": "facilities"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/itreatmedisoftcsv')]"
-			]
 		}
 	]
 }
