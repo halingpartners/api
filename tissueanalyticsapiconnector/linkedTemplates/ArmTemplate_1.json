@@ -732,14 +732,50 @@
 						"fileName": "codes_09-07-2021_10-19-2021_1634676888.csv",
 						"container": "itreat"
 					},
-					"columnDelimiter": ";",
+					"columnDelimiter": ",",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
 					{
-						"name": "Patient Name;Patient DOB;Facility;Physician;Service date;ICD10 codes;Billing codes;Encounter;Billed;Coded",
+						"name": "Patient Name",
+						"type": "String"
+					},
+					{
+						"name": "Patient DOB",
+						"type": "String"
+					},
+					{
+						"name": "Facility",
+						"type": "String"
+					},
+					{
+						"name": "Physician",
+						"type": "String"
+					},
+					{
+						"name": "Service date",
+						"type": "String"
+					},
+					{
+						"name": "ICD10 codes",
+						"type": "String"
+					},
+					{
+						"name": "Billing codes",
+						"type": "String"
+					},
+					{
+						"name": "Encounter",
+						"type": "String"
+					},
+					{
+						"name": "Billed",
+						"type": "String"
+					},
+					{
+						"name": "Coded",
 						"type": "String"
 					}
 				]
