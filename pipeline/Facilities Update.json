@@ -94,6 +94,18 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "RDCO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "rdco",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,
