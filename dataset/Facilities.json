@@ -31,6 +31,10 @@
 			{
 				"name": "itreat",
 				"type": "text"
+			},
+			{
+				"name": "rdco",
+				"type": "text"
 			}
 		],
 		"typeProperties": {
