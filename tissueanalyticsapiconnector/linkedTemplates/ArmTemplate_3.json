@@ -1042,7 +1042,16 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink"
+								"type": "AzureSqlSink",
+								"writeBehavior": "upsert",
+								"upsertSettings": {
+									"useTempDB": true,
+									"keys": [
+										"last_visit_date"
+									]
+								},
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
 							"enableSkipIncompatibleRow": true,
@@ -1076,7 +1085,7 @@
 									},
 									{
 										"source": {
-											"name": "patientfirst_name",
+											"name": "first_name1",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1088,7 +1097,7 @@
 									},
 									{
 										"source": {
-											"name": "patientlast_name",
+											"name": "last_name2",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1148,7 +1157,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianfirst_name",
+											"name": "first_name10",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -1160,7 +1169,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianlast_name",
+											"name": "last_name11",
 											"type": "String",
 											"physicalType": "String"
 										},

@@ -2522,7 +2522,16 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink"
+								"type": "AzureSqlSink",
+								"writeBehavior": "upsert",
+								"upsertSettings": {
+									"useTempDB": true,
+									"keys": [
+										"last_visit_date"
+									]
+								},
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
 							"enableSkipIncompatibleRow": true,
@@ -2556,7 +2565,7 @@
 									},
 									{
 										"source": {
-											"name": "patientfirst_name",
+											"name": "first_name1",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2568,7 +2577,7 @@
 									},
 									{
 										"source": {
-											"name": "patientlast_name",
+											"name": "last_name2",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2628,7 +2637,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianfirst_name",
+											"name": "first_name10",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2640,7 +2649,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianlast_name",
+											"name": "last_name11",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -7844,36 +7853,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "AutoResolve",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -7910,6 +7889,36 @@
 				"[concat(variables('factoryId'), '/pipelines/iTreat')]",
 				"[concat(variables('factoryId'), '/pipelines/TissueA')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }
