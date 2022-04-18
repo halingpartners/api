@@ -31,9 +31,7 @@
 						"writeBehavior": "upsert",
 						"upsertSettings": {
 							"useTempDB": true,
-							"keys": [
-								"last_visit_date"
-							]
+							"keys": []
 						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
