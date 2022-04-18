@@ -7887,6 +7887,13 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "TissueA",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -7900,7 +7907,8 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/iTreat')]"
+				"[concat(variables('factoryId'), '/pipelines/iTreat')]",
+				"[concat(variables('factoryId'), '/pipelines/TissueA')]"
 			]
 		}
 	]
