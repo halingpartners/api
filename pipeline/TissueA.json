@@ -31,7 +31,7 @@
 						"type": "AzureSqlSink",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
-							"useTempDB": true,
+							"useTempDB": false,
 							"keys": [
 								"visitid"
 							]
