@@ -26,6 +26,9 @@
 		"itreatmedisoftcsv_connectionString": {
 			"value": ""
 		},
+		"Sftp3_password": {
+			"value": ""
+		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://ltchealingpartners-my.sharepoint.com/:x:/r/personal/rritchie_healing-partners_com/Documents/Active_Facilities_Data_2.8.22.xlsx"
 		},
@@ -54,6 +57,12 @@
 			"value": "tissue-analytics.com"
 		},
 		"Tissue Analytics_properties_typeProperties_userName": {
+			"value": "healingpartners"
+		},
+		"Sftp3_properties_typeProperties_host": {
+			"value": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
 			"value": "healingpartners"
 		}
 	}

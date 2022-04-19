@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
 		},
+		"Sftp3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp3'"
+		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ltchealingpartners-my.sharepoint.com/:x:/r/personal/rritchie_healing-partners_com/Documents/Active_Facilities_Data_2.8.22.xlsx"
@@ -72,6 +76,14 @@
 			"defaultValue": "tissue-analytics.com"
 		},
 		"Tissue Analytics_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
+		"Sftp3_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "healingpartners"
 		},
@@ -210,6 +222,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Sftp3_password": {
+						"value": "[parameters('Sftp3_password')]"
+					},
+					"Sftp3_properties_typeProperties_host": {
+						"value": "[parameters('Sftp3_properties_typeProperties_host')]"
+					},
+					"Sftp3_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp3_properties_typeProperties_userName')]"
 					}
 				}
 			},
