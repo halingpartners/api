@@ -1,0 +1,6 @@
+{
+	"name": "tissueanalytics",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
