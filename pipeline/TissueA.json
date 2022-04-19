@@ -33,7 +33,7 @@
 						"upsertSettings": {
 							"useTempDB": true,
 							"keys": [
-								"wound_id"
+								"visitid"
 							]
 						},
 						"sqlWriterUseTableLock": false,
