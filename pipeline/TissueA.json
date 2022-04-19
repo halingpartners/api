@@ -64,7 +64,7 @@
 							},
 							{
 								"source": {
-									"name": "patientfirst_name",
+									"name": "patientfirstname",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -76,7 +76,7 @@
 							},
 							{
 								"source": {
-									"name": "patientlast_name",
+									"name": "patientlastname",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -136,7 +136,7 @@
 							},
 							{
 								"source": {
-									"name": "clinicianfirst_name",
+									"name": "providerfirstname",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -148,7 +148,7 @@
 							},
 							{
 								"source": {
-									"name": "clinicianlast_name",
+									"name": "providerlastname",
 									"type": "String",
 									"physicalType": "String"
 								},
