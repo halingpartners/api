@@ -743,7 +743,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_0",
+									"name": "wound_id",
 									"type": "String",
 									"physicalType": "String"
 								},
