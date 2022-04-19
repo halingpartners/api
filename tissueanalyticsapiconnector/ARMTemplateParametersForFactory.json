@@ -8,6 +8,18 @@
 		"HttpServer1_password": {
 			"value": ""
 		},
+		"Sftp1_password": {
+			"value": ""
+		},
+		"Sftp2_password": {
+			"value": ""
+		},
+		"TA 2_password": {
+			"value": ""
+		},
+		"Tissue Analytics_password": {
+			"value": ""
+		},
 		"healingpartnersreporting_connectionString": {
 			"value": ""
 		},
@@ -19,6 +31,30 @@
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"value": "BHinson@ltchealingpartners.onmicrosoft.com"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "sftp.tissue-analytics.com"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "healingpartners"
+		},
+		"Sftp2_properties_typeProperties_host": {
+			"value": "sftp.tissue-analytics.com"
+		},
+		"Sftp2_properties_typeProperties_userName": {
+			"value": "healingpartners"
+		},
+		"TA 2_properties_typeProperties_host": {
+			"value": "sftp.tissue-analytics.com"
+		},
+		"TA 2_properties_typeProperties_userName": {
+			"value": "healingpartners"
+		},
+		"Tissue Analytics_properties_typeProperties_host": {
+			"value": "tissue-analytics.com"
+		},
+		"Tissue Analytics_properties_typeProperties_userName": {
+			"value": "healingpartners"
 		}
 	}
 }

@@ -11,6 +11,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'HttpServer1'"
 		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp1'"
+		},
+		"Sftp2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp2'"
+		},
+		"TA 2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'TA 2'"
+		},
+		"Tissue Analytics_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Tissue Analytics'"
+		},
 		"healingpartnersreporting_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'healingpartnersreporting'"
@@ -26,6 +42,38 @@
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "BHinson@ltchealingpartners.onmicrosoft.com"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
+		"Sftp2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
+		"TA 2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"TA 2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
+		"Tissue Analytics_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "tissue-analytics.com"
+		},
+		"Tissue Analytics_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
 		}
 	},
 	"variables": {
@@ -2559,7 +2607,7 @@
 									},
 									{
 										"source": {
-											"name": "patientfirst_name",
+											"name": "patientfirstname",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2571,7 +2619,7 @@
 									},
 									{
 										"source": {
-											"name": "patientlast_name",
+											"name": "patientlastname",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2631,7 +2679,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianfirst_name",
+											"name": "providerfirstname",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -2643,7 +2691,7 @@
 									},
 									{
 										"source": {
-											"name": "clinicianlast_name",
+											"name": "providerlastname",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -7821,6 +7869,91 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Sftp1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp1_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sftp2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp2_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp2_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp2_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TA 2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "FtpServer",
+				"typeProperties": {
+					"host": "[parameters('TA 2_properties_typeProperties_host')]",
+					"port": 21,
+					"enableSsl": true,
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('TA 2_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('TA 2_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Tissue Analytics')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Tissue Analytics_properties_typeProperties_host')]",
+					"port": "22",
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Tissue Analytics_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Tissue Analytics_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/healingpartnersreporting')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -7856,7 +7989,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "iTreat",
+							"referenceName": "Facilities Update",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -7865,16 +7998,15 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Day",
+						"frequency": "Month",
 						"interval": 1,
-						"startTime": "2022-04-20T06:00:00",
-						"timeZone": "Eastern Standard Time",
-						"schedule": {}
+						"startTime": "2022-08-01T06:00:00",
+						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/iTreat')]"
+				"[concat(variables('factoryId'), '/pipelines/Facilities Update')]"
 			]
 		},
 		{
