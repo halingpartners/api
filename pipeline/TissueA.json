@@ -730,8 +730,8 @@
 							{
 								"source": {
 									"name": "wound_id",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
 									"name": "visitid",
