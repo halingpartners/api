@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Sftp2'"
 		},
+		"Sftp3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp3'"
+		},
 		"TA 2_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TA 2'"
@@ -34,10 +38,6 @@
 		"itreatmedisoftcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
-		},
-		"Sftp3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Sftp3'"
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
@@ -63,6 +63,14 @@
 			"type": "string",
 			"defaultValue": "healingpartners"
 		},
+		"Sftp3_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
 		"TA 2_properties_typeProperties_host": {
 			"type": "string",
 			"defaultValue": "sftp.tissue-analytics.com"
@@ -76,14 +84,6 @@
 			"defaultValue": "tissue-analytics.com"
 		},
 		"Tissue Analytics_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "healingpartners"
-		},
-		"Sftp3_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "sftp.tissue-analytics.com"
-		},
-		"Sftp3_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "healingpartners"
 		}
@@ -3022,7 +3022,7 @@
 									},
 									{
 										"source": {
-											"name": "Elevate Legs to Level of heart or above for 30 minutes",
+											"name": "Elevate Legs to Level of heart or above for 30 Minutes",
 											"type": "String",
 											"physicalType": "String"
 										},
@@ -6625,6 +6625,335 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText21')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Sftp3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "SftpLocation",
+						"fileName": "hp_daily_wound_report.csv",
+						"folderPath": "/home/healingpartners/reports"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Prop_0",
+						"type": "String"
+					},
+					{
+						"name": "patient_id",
+						"type": "String"
+					},
+					{
+						"name": "patientfirstname",
+						"type": "String"
+					},
+					{
+						"name": "patientlastname",
+						"type": "String"
+					},
+					{
+						"name": "mrn",
+						"type": "String"
+					},
+					{
+						"name": "fin",
+						"type": "String"
+					},
+					{
+						"name": "Last Care Setting",
+						"type": "String"
+					},
+					{
+						"name": "wound_started",
+						"type": "String"
+					},
+					{
+						"name": "Body Location",
+						"type": "String"
+					},
+					{
+						"name": "wound_number",
+						"type": "String"
+					},
+					{
+						"name": "Last Visit Date",
+						"type": "String"
+					},
+					{
+						"name": "providerfirstname",
+						"type": "String"
+					},
+					{
+						"name": "providerlastname",
+						"type": "String"
+					},
+					{
+						"name": "max_total_area",
+						"type": "String"
+					},
+					{
+						"name": "min_total_area",
+						"type": "String"
+					},
+					{
+						"name": "Area (cm^2)",
+						"type": "String"
+					},
+					{
+						"name": "Length (cm)",
+						"type": "String"
+					},
+					{
+						"name": "Width (cm)",
+						"type": "String"
+					},
+					{
+						"name": "Necrotic Tissue (%)",
+						"type": "String"
+					},
+					{
+						"name": "Granulation (%)",
+						"type": "String"
+					},
+					{
+						"name": "Epithelium (%)",
+						"type": "String"
+					},
+					{
+						"name": "Slough (%)",
+						"type": "String"
+					},
+					{
+						"name": "Other Tissue (%)",
+						"type": "String"
+					},
+					{
+						"name": "No Dot Present",
+						"type": "String"
+					},
+					{
+						"name": "No Wound Detected",
+						"type": "String"
+					},
+					{
+						"name": "Healed",
+						"type": "String"
+					},
+					{
+						"name": "signer_first",
+						"type": "String"
+					},
+					{
+						"name": "signer_last",
+						"type": "String"
+					},
+					{
+						"name": "Healing Rate",
+						"type": "String"
+					},
+					{
+						"name": "% epithelialization",
+						"type": "String"
+					},
+					{
+						"name": "% granulation",
+						"type": "String"
+					},
+					{
+						"name": "% slough/eschar",
+						"type": "String"
+					},
+					{
+						"name": "------------------------------------------",
+						"type": "String"
+					},
+					{
+						"name": "Acquired in House?",
+						"type": "String"
+					},
+					{
+						"name": "Additional woundbed details",
+						"type": "String"
+					},
+					{
+						"name": "Advanced Therapies Old",
+						"type": "String"
+					},
+					{
+						"name": "Assistive Devices",
+						"type": "String"
+					},
+					{
+						"name": "Cleanse Wound With",
+						"type": "String"
+					},
+					{
+						"name": "Cleanse Wound With Old",
+						"type": "String"
+					},
+					{
+						"name": "Cloth Dressings Old",
+						"type": "String"
+					},
+					{
+						"name": "Compression Stockings",
+						"type": "String"
+					},
+					{
+						"name": "Consult With Old",
+						"type": "String"
+					},
+					{
+						"name": "Creams / Ointments",
+						"type": "String"
+					},
+					{
+						"name": "Date Wound Acquired",
+						"type": "String"
+					},
+					{
+						"name": "Depth (cm)",
+						"type": "String"
+					},
+					{
+						"name": "Drain Amount",
+						"type": "String"
+					},
+					{
+						"name": "Drain Description",
+						"type": "String"
+					},
+					{
+						"name": "Dressing Change Frequency",
+						"type": "String"
+					},
+					{
+						"name": "Dressings",
+						"type": "String"
+					},
+					{
+						"name": "Elevate Legs to Level of heart or above for 30 Minutes",
+						"type": "String"
+					},
+					{
+						"name": "Elevate Legs to Level of heart or above for 30 minutes",
+						"type": "String"
+					},
+					{
+						"name": "Etiology",
+						"type": "String"
+					},
+					{
+						"name": "Foam Dressings",
+						"type": "String"
+					},
+					{
+						"name": "Gel Dressings Old",
+						"type": "String"
+					},
+					{
+						"name": "Margin Detail",
+						"type": "String"
+					},
+					{
+						"name": "Odor",
+						"type": "String"
+					},
+					{
+						"name": "Offloading/Immobilization",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					},
+					{
+						"name": "Pain",
+						"type": "String"
+					},
+					{
+						"name": "Periwound",
+						"type": "String"
+					},
+					{
+						"name": "Pressure Reduction",
+						"type": "String"
+					},
+					{
+						"name": "Pressure Reduction/Offloading",
+						"type": "String"
+					},
+					{
+						"name": "Recommended Culture/Biopsy",
+						"type": "String"
+					},
+					{
+						"name": "Recommended Laboratory Testing",
+						"type": "String"
+					},
+					{
+						"name": "Recommended Vascular/Radiology Testing:",
+						"type": "String"
+					},
+					{
+						"name": "Room Number",
+						"type": "String"
+					},
+					{
+						"name": "Secondary Dressing",
+						"type": "String"
+					},
+					{
+						"name": "Stalled wound healing cycle despite treatment (PER RAI MANUAL)",
+						"type": "String"
+					},
+					{
+						"name": "Tunneling (cm)",
+						"type": "String"
+					},
+					{
+						"name": "Tunneling Description",
+						"type": "String"
+					},
+					{
+						"name": "Undermining (cm)",
+						"type": "String"
+					},
+					{
+						"name": "Undermining Description",
+						"type": "String"
+					},
+					{
+						"name": "Wound Status",
+						"type": "String"
+					},
+					{
+						"name": "facility",
+						"type": "String"
+					},
+					{
+						"name": "Days Wound Active",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Sftp3')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -7942,6 +8271,33 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Sftp3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp3_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp3_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp3_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "tissueanalytics",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/tissueanalytics')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/TA 2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -8009,6 +8365,36 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TA Schedule')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "TissueA",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 2,
+						"startTime": "2022-04-19T15:00:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/TissueA')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
@@ -8089,317 +8475,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sftp3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Sftp",
-				"typeProperties": {
-					"host": "[parameters('Sftp3_properties_typeProperties_host')]",
-					"port": 22,
-					"skipHostKeyValidation": true,
-					"authenticationType": "Basic",
-					"userName": "[parameters('Sftp3_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('Sftp3_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "tissueanalytics",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/tissueanalytics')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText21')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Sftp3",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "SftpLocation",
-						"fileName": "hp_daily_wound_report.csv",
-						"folderPath": "/home/healingpartners/reports"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Sftp3')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TA Schedule')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TissueA",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 2,
-						"startTime": "2022-04-19T15:00:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/TissueA')]"
-			]
 		}
 	]
 }

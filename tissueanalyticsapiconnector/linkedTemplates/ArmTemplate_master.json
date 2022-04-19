@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Sftp2'"
 		},
+		"Sftp3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp3'"
+		},
 		"TA 2_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TA 2'"
@@ -34,10 +38,6 @@
 		"itreatmedisoftcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itreatmedisoftcsv'"
-		},
-		"Sftp3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Sftp3'"
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
@@ -63,6 +63,14 @@
 			"type": "string",
 			"defaultValue": "healingpartners"
 		},
+		"Sftp3_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
+		},
 		"TA 2_properties_typeProperties_host": {
 			"type": "string",
 			"defaultValue": "sftp.tissue-analytics.com"
@@ -76,14 +84,6 @@
 			"defaultValue": "tissue-analytics.com"
 		},
 		"Tissue Analytics_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "healingpartners"
-		},
-		"Sftp3_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "sftp.tissue-analytics.com"
-		},
-		"Sftp3_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "healingpartners"
 		},

@@ -14,6 +14,9 @@
 		"Sftp2_password": {
 			"value": ""
 		},
+		"Sftp3_password": {
+			"value": ""
+		},
 		"TA 2_password": {
 			"value": ""
 		},
@@ -24,9 +27,6 @@
 			"value": ""
 		},
 		"itreatmedisoftcsv_connectionString": {
-			"value": ""
-		},
-		"Sftp3_password": {
 			"value": ""
 		},
 		"HttpServer1_properties_typeProperties_url": {
@@ -47,6 +47,12 @@
 		"Sftp2_properties_typeProperties_userName": {
 			"value": "healingpartners"
 		},
+		"Sftp3_properties_typeProperties_host": {
+			"value": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
+			"value": "healingpartners"
+		},
 		"TA 2_properties_typeProperties_host": {
 			"value": "sftp.tissue-analytics.com"
 		},
@@ -57,12 +63,6 @@
 			"value": "tissue-analytics.com"
 		},
 		"Tissue Analytics_properties_typeProperties_userName": {
-			"value": "healingpartners"
-		},
-		"Sftp3_properties_typeProperties_host": {
-			"value": "sftp.tissue-analytics.com"
-		},
-		"Sftp3_properties_typeProperties_userName": {
 			"value": "healingpartners"
 		}
 	}
