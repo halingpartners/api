@@ -7865,10 +7865,11 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
+						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2022-04-19T06:00:00",
-						"timeZone": "Eastern Standard Time"
+						"startTime": "2022-04-20T06:00:00",
+						"timeZone": "Eastern Standard Time",
+						"schedule": {}
 					}
 				}
 			},
