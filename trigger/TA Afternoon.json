@@ -1,5 +1,5 @@
 {
-	"name": "TA Schedule",
+	"name": "TA Afternoon",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
@@ -14,10 +14,18 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Hour",
-				"interval": 12,
-				"startTime": "2022-04-20T15:00:00Z",
-				"timeZone": "UTC"
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-04-20T06:00:00",
+				"timeZone": "Eastern Standard Time",
+				"schedule": {
+					"minutes": [
+						0
+					],
+					"hours": [
+						6
+					]
+				}
 			}
 		}
 	}
