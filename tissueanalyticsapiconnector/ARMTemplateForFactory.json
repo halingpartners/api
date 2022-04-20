@@ -8363,8 +8363,8 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 2,
-						"startTime": "2022-04-19T15:00:00Z",
+						"interval": 12,
+						"startTime": "2022-04-20T15:00:00Z",
 						"timeZone": "UTC"
 					}
 				}
