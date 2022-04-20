@@ -13,316 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText15')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "itreatmedisoftcsv",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "tissueanalytics"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "patient_id",
-						"type": "String"
-					},
-					{
-						"name": "first_name1",
-						"type": "String"
-					},
-					{
-						"name": "last_name2",
-						"type": "String"
-					},
-					{
-						"name": "mrn",
-						"type": "String"
-					},
-					{
-						"name": "fin",
-						"type": "String"
-					},
-					{
-						"name": "Last Care Setting",
-						"type": "String"
-					},
-					{
-						"name": "wound_started",
-						"type": "String"
-					},
-					{
-						"name": "Wound Number",
-						"type": "String"
-					},
-					{
-						"name": "Last Visit Date",
-						"type": "String"
-					},
-					{
-						"name": "first_name9",
-						"type": "String"
-					},
-					{
-						"name": "last_name10",
-						"type": "String"
-					},
-					{
-						"name": "max_total_area",
-						"type": "String"
-					},
-					{
-						"name": "min_total_area",
-						"type": "String"
-					},
-					{
-						"name": "Area (cm^2)",
-						"type": "String"
-					},
-					{
-						"name": "Length (cm)",
-						"type": "String"
-					},
-					{
-						"name": "Width (cm)",
-						"type": "String"
-					},
-					{
-						"name": "Necrotic Tissue (%)",
-						"type": "String"
-					},
-					{
-						"name": "Granulation (%)",
-						"type": "String"
-					},
-					{
-						"name": "Epithelium (%)",
-						"type": "String"
-					},
-					{
-						"name": "Slough (%)",
-						"type": "String"
-					},
-					{
-						"name": "Other Tissue (%)",
-						"type": "String"
-					},
-					{
-						"name": "No Dot Present",
-						"type": "String"
-					},
-					{
-						"name": "No Wound Detected",
-						"type": "String"
-					},
-					{
-						"name": "Healed",
-						"type": "String"
-					},
-					{
-						"name": "Healing Rate",
-						"type": "String"
-					},
-					{
-						"name": "% epithelialization",
-						"type": "String"
-					},
-					{
-						"name": "% granulation",
-						"type": "String"
-					},
-					{
-						"name": "% slough/eschar",
-						"type": "String"
-					},
-					{
-						"name": "------------------------------------------",
-						"type": "String"
-					},
-					{
-						"name": "Acquired in House?",
-						"type": "String"
-					},
-					{
-						"name": "Additional woundbed details",
-						"type": "String"
-					},
-					{
-						"name": "Advanced Therapies Old",
-						"type": "String"
-					},
-					{
-						"name": "Assistive Devices",
-						"type": "String"
-					},
-					{
-						"name": "Cleanse Wound With",
-						"type": "String"
-					},
-					{
-						"name": "Cleanse Wound With Old",
-						"type": "String"
-					},
-					{
-						"name": "Cloth Dressings Old",
-						"type": "String"
-					},
-					{
-						"name": "Compression Stockings",
-						"type": "String"
-					},
-					{
-						"name": "Consult With Old",
-						"type": "String"
-					},
-					{
-						"name": "Creams / Ointments",
-						"type": "String"
-					},
-					{
-						"name": "Date Wound Acquired",
-						"type": "String"
-					},
-					{
-						"name": "Depth (cm)",
-						"type": "String"
-					},
-					{
-						"name": "Drain Amount",
-						"type": "String"
-					},
-					{
-						"name": "Drain Description",
-						"type": "String"
-					},
-					{
-						"name": "Dressing Change Frequency",
-						"type": "String"
-					},
-					{
-						"name": "Dressings",
-						"type": "String"
-					},
-					{
-						"name": "Elevate Legs to Level of heart or above for 30 Minutes",
-						"type": "String"
-					},
-					{
-						"name": "Elevate Legs to Level of heart or above for 30 minutes",
-						"type": "String"
-					},
-					{
-						"name": "Etiology",
-						"type": "String"
-					},
-					{
-						"name": "Foam Dressings",
-						"type": "String"
-					},
-					{
-						"name": "Gel Dressings Old",
-						"type": "String"
-					},
-					{
-						"name": "Margin Detail",
-						"type": "String"
-					},
-					{
-						"name": "Odor",
-						"type": "String"
-					},
-					{
-						"name": "Offloading/Immobilization",
-						"type": "String"
-					},
-					{
-						"name": "Other",
-						"type": "String"
-					},
-					{
-						"name": "Pain",
-						"type": "String"
-					},
-					{
-						"name": "Periwound",
-						"type": "String"
-					},
-					{
-						"name": "Pressure Reduction",
-						"type": "String"
-					},
-					{
-						"name": "Pressure Reduction/Offloading",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Culture/Biopsy",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Laboratory Testing",
-						"type": "String"
-					},
-					{
-						"name": "Recommended Vascular/Radiology Testing:",
-						"type": "String"
-					},
-					{
-						"name": "Room Number",
-						"type": "String"
-					},
-					{
-						"name": "Secondary Dressing",
-						"type": "String"
-					},
-					{
-						"name": "Stalled wound healing cycle despite treatment (PER RAI MANUAL)",
-						"type": "String"
-					},
-					{
-						"name": "Tunneling (cm)",
-						"type": "String"
-					},
-					{
-						"name": "Tunneling Description",
-						"type": "String"
-					},
-					{
-						"name": "Undermining (cm)",
-						"type": "String"
-					},
-					{
-						"name": "Undermining Description",
-						"type": "String"
-					},
-					{
-						"name": "Wound Status",
-						"type": "String"
-					},
-					{
-						"name": "facility",
-						"type": "String"
-					},
-					{
-						"name": "Days Wound Active",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText16')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2447,6 +2137,54 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "revenuefour"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "billingdate",
+						"type": "text"
+					},
+					{
+						"name": "balance",
+						"type": "text"
+					},
+					{
+						"name": "revenue",
+						"type": "text"
+					},
+					{
+						"name": "entrynumber",
+						"type": "text"
+					},
+					{
+						"name": "aging",
+						"type": "text"
+					},
+					{
+						"name": "agebucket",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "revenuethree"
 				}
 			},
 			"dependsOn": []
