@@ -720,6 +720,16 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "wound_id",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "visitid",
+									"physicalType": "int"
+								}
 							}
 						],
 						"typeConversion": true,
