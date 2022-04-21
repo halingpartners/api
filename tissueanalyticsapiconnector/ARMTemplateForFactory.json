@@ -7396,7 +7396,7 @@
 						"fileName": "hp_daily_wound_report.csv",
 						"folderPath": "/home/healingpartners/reports"
 					},
-					"columnDelimiter": ",",
+					"columnDelimiter": "|",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
@@ -9159,8 +9159,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2022-04-20T16:00:00",
-						"timeZone": "Eastern Standard Time",
-						"schedule": {}
+						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
