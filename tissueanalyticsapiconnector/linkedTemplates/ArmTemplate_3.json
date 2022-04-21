@@ -2685,7 +2685,7 @@
 				"schema": [
 					{
 						"name": "wound_id",
-						"type": "Int"
+						"type": "String"
 					},
 					{
 						"name": "patient_id",
@@ -3027,6 +3027,7 @@
 								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
+							"enableSkipIncompatibleRow": false,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -3717,11 +3718,13 @@
 									{
 										"source": {
 											"name": "wound_id",
-											"physicalType": "int"
+											"type": "String",
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "visitid",
-											"physicalType": "int"
+											"type": "String",
+											"physicalType": "text"
 										}
 									}
 								],
