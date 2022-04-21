@@ -202,6 +202,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Sftp3_password": {
+						"value": "[parameters('Sftp3_password')]"
+					},
+					"Sftp3_properties_typeProperties_host": {
+						"value": "[parameters('Sftp3_properties_typeProperties_host')]"
+					},
+					"Sftp3_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp3_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -222,15 +231,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"Sftp3_password": {
-						"value": "[parameters('Sftp3_password')]"
-					},
-					"Sftp3_properties_typeProperties_host": {
-						"value": "[parameters('Sftp3_properties_typeProperties_host')]"
-					},
-					"Sftp3_properties_typeProperties_userName": {
-						"value": "[parameters('Sftp3_properties_typeProperties_userName')]"
 					}
 				}
 			},
