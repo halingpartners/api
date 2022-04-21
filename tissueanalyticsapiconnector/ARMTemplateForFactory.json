@@ -6622,7 +6622,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "SftpLocation",
-						"fileName": "hp_daily_wound_report_historic.csv",
+						"fileName": "hp_daily_wound_report.csv",
 						"folderPath": "/home/healingpartners/reports"
 					},
 					"columnDelimiter": ",",
