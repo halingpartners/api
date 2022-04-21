@@ -235,6 +235,10 @@
 			{
 				"name": "woundnumber",
 				"type": "text"
+			},
+			{
+				"name": "visitid",
+				"type": "text"
 			}
 		],
 		"typeProperties": {
