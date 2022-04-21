@@ -13,7 +13,7 @@
 				"fileName": "hp_daily_wound_report_historic.csv",
 				"folderPath": "/home/healingpartners/reports"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
