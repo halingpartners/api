@@ -60,7 +60,7 @@
 				"     insertable:false,",
 				"     updateable:false,",
 				"     upsertable:false,",
-				"     keys:['patientname'],",
+				"     keys:['ICD10'],",
 				"     format: 'table',",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
