@@ -60,6 +60,7 @@
 				"     insertable:false,",
 				"     updateable:false,",
 				"     upsertable:false,",
+				"     keys:['patientname'],",
 				"     format: 'table',",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
