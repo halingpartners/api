@@ -1,0 +1,24 @@
+{
+	"name": "iTreat",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "iTreat",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-04-24T06:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
