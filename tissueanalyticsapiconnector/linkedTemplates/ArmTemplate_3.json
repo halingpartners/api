@@ -4855,7 +4855,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/iTreat')]",
+			"name": "[concat(parameters('factoryName'), '/itreat2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -4875,7 +4875,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2022-04-25T16:55:00",
+						"startTime": "2022-04-25T18:05:00",
 						"timeZone": "Eastern Standard Time",
 						"schedule": {}
 					}
