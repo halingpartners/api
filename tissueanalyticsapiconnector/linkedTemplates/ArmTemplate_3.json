@@ -4841,8 +4841,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2022-04-25T06:00:00",
-						"timeZone": "Eastern Standard Time",
-						"schedule": {}
+						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
@@ -4851,7 +4850,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TA Afternoon')]",
+			"name": "[concat(parameters('factoryName'), '/cash')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -4860,7 +4859,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "TissueA",
+							"referenceName": "Medisoft1",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -4869,15 +4868,20 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Day",
+						"frequency": "Week",
 						"interval": 1,
-						"startTime": "2022-04-20T15:00:00",
-						"timeZone": "Eastern Standard Time"
+						"startTime": "2022-04-27T18:00:00",
+						"timeZone": "Eastern Standard Time",
+						"schedule": {
+							"weekDays": [
+								"Wednesday"
+							]
+						}
 					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/TissueA')]"
+				"[concat(variables('factoryId'), '/pipelines/Medisoft1')]"
 			]
 		}
 	]
