@@ -4876,8 +4876,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2022-04-27T06:15:00",
-						"timeZone": "Eastern Standard Time",
-						"schedule": {}
+						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
