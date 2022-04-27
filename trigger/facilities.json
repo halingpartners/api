@@ -1,0 +1,24 @@
+{
+	"name": "facilities",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Facilities Update",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-04-28T06:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
