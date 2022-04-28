@@ -1,0 +1,25 @@
+{
+	"name": "tafacilitydestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "originalfacilityname",
+				"type": "text"
+			},
+			{
+				"name": "displayfacilityname",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tafacility"
+		}
+	}
+}
