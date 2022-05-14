@@ -6,18 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "tissueanalyticsapiconnector"
-		},
-		"Sftp3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Sftp3'"
-		},
-		"Sftp3_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "sftp.tissue-analytics.com"
-		},
-		"Sftp3_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "healingpartners"
 		}
 	},
 	"variables": {
@@ -1891,26 +1879,29 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Sftp3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/tafacilitydestination')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "Sftp",
-				"typeProperties": {
-					"host": "[parameters('Sftp3_properties_typeProperties_host')]",
-					"port": 22,
-					"skipHostKeyValidation": true,
-					"authenticationType": "Basic",
-					"userName": "[parameters('Sftp3_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('Sftp3_password')]"
-					}
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
 				},
-				"connectVia": {
-					"referenceName": "tissueanalytics",
-					"type": "IntegrationRuntimeReference"
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "originalfacilityname",
+						"type": "text"
+					},
+					{
+						"name": "displayfacilityname",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "tafacility"
 				}
 			},
 			"dependsOn": []

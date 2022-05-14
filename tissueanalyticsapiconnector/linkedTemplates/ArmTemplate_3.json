@@ -6,6 +6,18 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "tissueanalyticsapiconnector"
+		},
+		"Sftp3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp3'"
+		},
+		"Sftp3_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.tissue-analytics.com"
+		},
+		"Sftp3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "healingpartners"
 		}
 	},
 	"variables": {
@@ -64,29 +76,26 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/tafacilitydestination')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/Sftp3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "originalfacilityname",
-						"type": "text"
-					},
-					{
-						"name": "displayfacilityname",
-						"type": "text"
-					}
-				],
+				"type": "Sftp",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "tafacility"
+					"host": "[parameters('Sftp3_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp3_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp3_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "tissueanalytics",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": []
@@ -2565,7 +2574,6 @@
 									{
 										"source": {
 											"name": "Patient Name",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2577,7 +2585,6 @@
 									{
 										"source": {
 											"name": "Physician",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2589,7 +2596,6 @@
 									{
 										"source": {
 											"name": "Facility",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2601,7 +2607,6 @@
 									{
 										"source": {
 											"name": "ICD10 codes",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2613,7 +2618,6 @@
 									{
 										"source": {
 											"name": "Billed",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2625,7 +2629,6 @@
 									{
 										"source": {
 											"name": "Coded",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2637,7 +2640,6 @@
 									{
 										"source": {
 											"name": "Service date",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2649,7 +2651,6 @@
 									{
 										"source": {
 											"name": "Encounter",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2661,7 +2662,6 @@
 									{
 										"source": {
 											"name": "Billing codes",
-											"type": "String",
 											"physicalType": "String"
 										},
 										"sink": {
@@ -2701,6 +2701,103 @@
 				"annotations": []
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tafacilitysink')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Facility",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "originalfacilityname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									},
+									{
+										"source": {
+											"name": "Facility Name to Display",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "displayfacilityname",
+											"type": "String",
+											"physicalType": "text"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "tafacilitysource",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "tafacilitydestination",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/tafacilitysource')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText21')]",
@@ -3027,7 +3124,9 @@
 					}
 				]
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Sftp3')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/tahistorical')]",
@@ -3354,104 +3453,8 @@
 					}
 				]
 			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tafacilitysink')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Facility",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "originalfacilityname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									},
-									{
-										"source": {
-											"name": "Facility Name to Display",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "displayfacilityname",
-											"type": "String",
-											"physicalType": "text"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "tafacilitysource",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "tafacilitydestination",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/tafacilitysource')]",
-				"[concat(variables('factoryId'), '/datasets/tafacilitydestination')]"
+				"[concat(variables('factoryId'), '/linkedServices/Sftp3')]"
 			]
 		},
 		{
