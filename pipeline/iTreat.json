@@ -61,7 +61,6 @@
 							{
 								"source": {
 									"name": "Physician",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -73,7 +72,6 @@
 							{
 								"source": {
 									"name": "Facility",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -85,7 +83,6 @@
 							{
 								"source": {
 									"name": "ICD10 codes",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -97,7 +94,6 @@
 							{
 								"source": {
 									"name": "Billed",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -109,7 +105,6 @@
 							{
 								"source": {
 									"name": "Coded",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -121,7 +116,6 @@
 							{
 								"source": {
 									"name": "Service date",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -133,7 +127,6 @@
 							{
 								"source": {
 									"name": "Encounter",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -145,7 +138,6 @@
 							{
 								"source": {
 									"name": "Billing codes",
-									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
