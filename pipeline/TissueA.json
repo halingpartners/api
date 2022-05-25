@@ -733,6 +733,18 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "signed_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "signdate",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,
