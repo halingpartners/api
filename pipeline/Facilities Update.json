@@ -106,6 +106,18 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "Projected Visits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "projectedvisits",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,
