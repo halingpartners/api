@@ -118,6 +118,18 @@
 									"type": "String",
 									"physicalType": "text"
 								}
+							},
+							{
+								"source": {
+									"name": "Bed Size",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "beds",
+									"type": "String",
+									"physicalType": "text"
+								}
 							}
 						],
 						"typeConversion": true,
