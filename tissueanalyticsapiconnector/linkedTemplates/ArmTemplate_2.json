@@ -1724,6 +1724,80 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/censusdestination')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dateof",
+						"type": "text"
+					},
+					{
+						"name": "census",
+						"type": "text"
+					},
+					{
+						"name": "admissions",
+						"type": "text"
+					},
+					{
+						"name": "seen",
+						"type": "text"
+					},
+					{
+						"name": "originsystem",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "census"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/censussource')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itreatmedisoftcsv",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "census_and_visits_06-01-2006_06-06-2022_1654570040.csv",
+						"container": "census"
+					},
+					"columnDelimiter": ";",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/facilitiessource')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1826,82 +1900,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "revenuefour"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "billingdate",
-						"type": "text"
-					},
-					{
-						"name": "balance",
-						"type": "text"
-					},
-					{
-						"name": "revenue",
-						"type": "text"
-					},
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "aging",
-						"type": "text"
-					},
-					{
-						"name": "agebucket",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "revenuethree"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tafacilitydestination')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "originalfacilityname",
-						"type": "text"
-					},
-					{
-						"name": "displayfacilityname",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "tafacility"
 				}
 			},
 			"dependsOn": []
