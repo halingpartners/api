@@ -1,0 +1,134 @@
+{
+	"name": "censusupdate",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Facility",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "facility",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "dateof",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Census",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "census",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Admissions",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "admissions",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "Seen",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "seen",
+									"type": "String",
+									"physicalType": "text"
+								}
+							},
+							{
+								"source": {
+									"name": "System",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "originsystem",
+									"type": "String",
+									"physicalType": "text"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "censussource",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "censusdestination",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
