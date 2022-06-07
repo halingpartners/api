@@ -1,0 +1,27 @@
+{
+	"name": "DelimitedText22",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itreatmedisoftcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "census_and_visits_06-01-2006_06-06-2022_1654570040.csv",
+				"container": "census"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
