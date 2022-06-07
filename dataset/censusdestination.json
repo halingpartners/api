@@ -1,0 +1,41 @@
+{
+	"name": "censusdestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "facility",
+				"type": "text"
+			},
+			{
+				"name": "dateof",
+				"type": "text"
+			},
+			{
+				"name": "census",
+				"type": "text"
+			},
+			{
+				"name": "admissions",
+				"type": "text"
+			},
+			{
+				"name": "seen",
+				"type": "text"
+			},
+			{
+				"name": "originsystem",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "census"
+		}
+	}
+}
