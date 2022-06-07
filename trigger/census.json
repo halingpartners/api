@@ -1,0 +1,24 @@
+{
+	"name": "census",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "censusupdate",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-06-07T06:25:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
