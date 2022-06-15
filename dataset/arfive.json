@@ -1,0 +1,89 @@
+{
+	"name": "arfive",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "chartno",
+				"type": "text"
+			},
+			{
+				"name": "lastname",
+				"type": "text"
+			},
+			{
+				"name": "firstname",
+				"type": "text"
+			},
+			{
+				"name": "dos",
+				"type": "text"
+			},
+			{
+				"name": "cpt",
+				"type": "text"
+			},
+			{
+				"name": "charge",
+				"type": "text"
+			},
+			{
+				"name": "insoneamtpd",
+				"type": "text"
+			},
+			{
+				"name": "instwoamtpd",
+				"type": "text"
+			},
+			{
+				"name": "instthreeamtpd",
+				"type": "text"
+			},
+			{
+				"name": "guaramtpd",
+				"type": "text"
+			},
+			{
+				"name": "totalpmt",
+				"type": "text"
+			},
+			{
+				"name": "adj",
+				"type": "text"
+			},
+			{
+				"name": "balance",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			},
+			{
+				"name": "state",
+				"type": "text"
+			},
+			{
+				"name": "initialbillingdateone",
+				"type": "text"
+			},
+			{
+				"name": "primarybillingdate",
+				"type": "text"
+			},
+			{
+				"name": "provider",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "arfive"
+		}
+	}
+}
