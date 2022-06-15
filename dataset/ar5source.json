@@ -1,0 +1,96 @@
+{
+	"name": "ar5source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itreatmedisoftcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ar5.csv",
+				"container": "medisoft"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Chart #",
+				"type": "String"
+			},
+			{
+				"name": "Last Name",
+				"type": "String"
+			},
+			{
+				"name": "First Name",
+				"type": "String"
+			},
+			{
+				"name": "DOS",
+				"type": "String"
+			},
+			{
+				"name": "CPT",
+				"type": "String"
+			},
+			{
+				"name": "Charge",
+				"type": "String"
+			},
+			{
+				"name": "Ins1 Amt Pd",
+				"type": "String"
+			},
+			{
+				"name": "Ins2 Amt Pd",
+				"type": "String"
+			},
+			{
+				"name": "Ins3 Amt Pd",
+				"type": "String"
+			},
+			{
+				"name": "Guar Amt Pd",
+				"type": "String"
+			},
+			{
+				"name": "Total Pmt",
+				"type": "String"
+			},
+			{
+				"name": "Adjustment",
+				"type": "String"
+			},
+			{
+				"name": "Balance",
+				"type": "String"
+			},
+			{
+				"name": "Facility",
+				"type": "String"
+			},
+			{
+				"name": "Fac State",
+				"type": "String"
+			},
+			{
+				"name": "Initial Billing Date 1",
+				"type": "String"
+			},
+			{
+				"name": "Primary Billing Date",
+				"type": "String"
+			},
+			{
+				"name": "Provider",
+				"type": "String"
+			}
+		]
+	}
+}
