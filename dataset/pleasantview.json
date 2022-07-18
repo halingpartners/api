@@ -1,0 +1,253 @@
+{
+	"name": "pleasantview",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "healingpartnersreporting",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "patient_id",
+				"type": "text"
+			},
+			{
+				"name": "patient_firstname",
+				"type": "text"
+			},
+			{
+				"name": "patient_lastname",
+				"type": "text"
+			},
+			{
+				"name": "mrn",
+				"type": "text"
+			},
+			{
+				"name": "last_care_setting",
+				"type": "text"
+			},
+			{
+				"name": "wound_started",
+				"type": "text"
+			},
+			{
+				"name": "last_visit_date",
+				"type": "text"
+			},
+			{
+				"name": "clinician_first_name",
+				"type": "text"
+			},
+			{
+				"name": "clinician_last_name",
+				"type": "text"
+			},
+			{
+				"name": "max_total_area",
+				"type": "text"
+			},
+			{
+				"name": "min_total_area",
+				"type": "text"
+			},
+			{
+				"name": "areacmsq",
+				"type": "text"
+			},
+			{
+				"name": "lengthcm",
+				"type": "text"
+			},
+			{
+				"name": "necrotictissueperc",
+				"type": "text"
+			},
+			{
+				"name": "granulationperc",
+				"type": "text"
+			},
+			{
+				"name": "epitheliumperc",
+				"type": "text"
+			},
+			{
+				"name": "sloughperc",
+				"type": "text"
+			},
+			{
+				"name": "othertissueperc",
+				"type": "text"
+			},
+			{
+				"name": "no_dot_present",
+				"type": "text"
+			},
+			{
+				"name": "no_wound_detected",
+				"type": "text"
+			},
+			{
+				"name": "healingrate",
+				"type": "text"
+			},
+			{
+				"name": "perceepithelizatoin",
+				"type": "text"
+			},
+			{
+				"name": "percgranulation",
+				"type": "text"
+			},
+			{
+				"name": "percslough",
+				"type": "text"
+			},
+			{
+				"name": "acquired_in_house",
+				"type": "text"
+			},
+			{
+				"name": "additional_woundbed_detail",
+				"type": "text"
+			},
+			{
+				"name": "cleanse_wound_width",
+				"type": "text"
+			},
+			{
+				"name": "creamsointments",
+				"type": "text"
+			},
+			{
+				"name": "date_wound_acquired",
+				"type": "text"
+			},
+			{
+				"name": "depthcm",
+				"type": "text"
+			},
+			{
+				"name": "drainamount",
+				"type": "text"
+			},
+			{
+				"name": "draindesc",
+				"type": "text"
+			},
+			{
+				"name": "dressingchangefrequency",
+				"type": "text"
+			},
+			{
+				"name": "dressings",
+				"type": "text"
+			},
+			{
+				"name": "legelevationneeded",
+				"type": "text"
+			},
+			{
+				"name": "etiology",
+				"type": "text"
+			},
+			{
+				"name": "getdressingsold",
+				"type": "text"
+			},
+			{
+				"name": "margindetail",
+				"type": "text"
+			},
+			{
+				"name": "odor",
+				"type": "text"
+			},
+			{
+				"name": "other",
+				"type": "text"
+			},
+			{
+				"name": "pain",
+				"type": "text"
+			},
+			{
+				"name": "periwound",
+				"type": "text"
+			},
+			{
+				"name": "pressurereduction",
+				"type": "text"
+			},
+			{
+				"name": "roomnumber",
+				"type": "text"
+			},
+			{
+				"name": "secondarydressing",
+				"type": "text"
+			},
+			{
+				"name": "stalledwound",
+				"type": "text"
+			},
+			{
+				"name": "tunnelingcm",
+				"type": "text"
+			},
+			{
+				"name": "tunnelingdesc",
+				"type": "text"
+			},
+			{
+				"name": "underminingcm",
+				"type": "text"
+			},
+			{
+				"name": "underminingdesc",
+				"type": "text"
+			},
+			{
+				"name": "woundstatus",
+				"type": "text"
+			},
+			{
+				"name": "facility",
+				"type": "text"
+			},
+			{
+				"name": "dayswoundactive",
+				"type": "text"
+			},
+			{
+				"name": "widthcm",
+				"type": "text"
+			},
+			{
+				"name": "woundlocation",
+				"type": "text"
+			},
+			{
+				"name": "misc",
+				"type": "text"
+			},
+			{
+				"name": "woundnumber",
+				"type": "text"
+			},
+			{
+				"name": "visitid",
+				"type": "text"
+			},
+			{
+				"name": "signdate",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pleasantview"
+		}
+	}
+}
