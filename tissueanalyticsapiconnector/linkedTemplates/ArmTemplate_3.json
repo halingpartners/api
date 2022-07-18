@@ -6,18 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "tissueanalyticsapiconnector"
-		},
-		"Sftp3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Sftp3'"
-		},
-		"Sftp3_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "sftp.tissue-analytics.com"
-		},
-		"Sftp3_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "healingpartners"
 		}
 	},
 	"variables": {
@@ -1423,265 +1411,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/facilitiessource')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "itreatmedisoftcsv",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "Active_Facilities_Data_2.8.22.csv",
-						"container": "facilities"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Region",
-						"type": "String"
-					},
-					{
-						"name": "Facility ",
-						"type": "String"
-					},
-					{
-						"name": "Bed Size",
-						"type": "String"
-					},
-					{
-						"name": "Operator",
-						"type": "String"
-					},
-					{
-						"name": "Owner",
-						"type": "String"
-					},
-					{
-						"name": "Regional Clinical Lead",
-						"type": "String"
-					},
-					{
-						"name": "RDCO",
-						"type": "String"
-					},
-					{
-						"name": "iTreat Facility Name",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/revenuefour')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "billingdate",
-						"type": "text"
-					},
-					{
-						"name": "balance",
-						"type": "text"
-					},
-					{
-						"name": "revenue",
-						"type": "text"
-					},
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "aging",
-						"type": "text"
-					},
-					{
-						"name": "agebucket",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "revenuefour"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/revenuethree')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "billingdate",
-						"type": "text"
-					},
-					{
-						"name": "balance",
-						"type": "text"
-					},
-					{
-						"name": "revenue",
-						"type": "text"
-					},
-					{
-						"name": "entrynumber",
-						"type": "text"
-					},
-					{
-						"name": "aging",
-						"type": "text"
-					},
-					{
-						"name": "agebucket",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "revenuethree"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tafacilitydestination')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "originalfacilityname",
-						"type": "text"
-					},
-					{
-						"name": "displayfacilityname",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "tafacility"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tafacilitysource')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "itreatmedisoftcsv",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "tafacility.csv",
-						"container": "tafacility"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Facility",
-						"type": "String"
-					},
-					{
-						"name": "Facility Name to Display",
-						"type": "String"
-					},
-					{
-						"name": "Prop_2",
-						"type": "String"
-					},
-					{
-						"name": "Prop_3",
-						"type": "String"
-					},
-					{
-						"name": "Prop_4",
-						"type": "String"
-					},
-					{
-						"name": "Prop_5",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sftp3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Sftp",
-				"typeProperties": {
-					"host": "[parameters('Sftp3_properties_typeProperties_host')]",
-					"port": 22,
-					"skipHostKeyValidation": true,
-					"authenticationType": "Basic",
-					"userName": "[parameters('Sftp3_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('Sftp3_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "tissueanalytics",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/creekwood')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2194,262 +1923,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/fayette')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "healingpartnersreporting",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "patient_id",
-						"type": "text"
-					},
-					{
-						"name": "patient_firstname",
-						"type": "text"
-					},
-					{
-						"name": "patient_lastname",
-						"type": "text"
-					},
-					{
-						"name": "mrn",
-						"type": "text"
-					},
-					{
-						"name": "last_care_setting",
-						"type": "text"
-					},
-					{
-						"name": "wound_started",
-						"type": "text"
-					},
-					{
-						"name": "last_visit_date",
-						"type": "text"
-					},
-					{
-						"name": "clinician_first_name",
-						"type": "text"
-					},
-					{
-						"name": "clinician_last_name",
-						"type": "text"
-					},
-					{
-						"name": "max_total_area",
-						"type": "text"
-					},
-					{
-						"name": "min_total_area",
-						"type": "text"
-					},
-					{
-						"name": "areacmsq",
-						"type": "text"
-					},
-					{
-						"name": "lengthcm",
-						"type": "text"
-					},
-					{
-						"name": "necrotictissueperc",
-						"type": "text"
-					},
-					{
-						"name": "granulationperc",
-						"type": "text"
-					},
-					{
-						"name": "epitheliumperc",
-						"type": "text"
-					},
-					{
-						"name": "sloughperc",
-						"type": "text"
-					},
-					{
-						"name": "othertissueperc",
-						"type": "text"
-					},
-					{
-						"name": "no_dot_present",
-						"type": "text"
-					},
-					{
-						"name": "no_wound_detected",
-						"type": "text"
-					},
-					{
-						"name": "healingrate",
-						"type": "text"
-					},
-					{
-						"name": "perceepithelizatoin",
-						"type": "text"
-					},
-					{
-						"name": "percgranulation",
-						"type": "text"
-					},
-					{
-						"name": "percslough",
-						"type": "text"
-					},
-					{
-						"name": "acquired_in_house",
-						"type": "text"
-					},
-					{
-						"name": "additional_woundbed_detail",
-						"type": "text"
-					},
-					{
-						"name": "cleanse_wound_width",
-						"type": "text"
-					},
-					{
-						"name": "creamsointments",
-						"type": "text"
-					},
-					{
-						"name": "date_wound_acquired",
-						"type": "text"
-					},
-					{
-						"name": "depthcm",
-						"type": "text"
-					},
-					{
-						"name": "drainamount",
-						"type": "text"
-					},
-					{
-						"name": "draindesc",
-						"type": "text"
-					},
-					{
-						"name": "dressingchangefrequency",
-						"type": "text"
-					},
-					{
-						"name": "dressings",
-						"type": "text"
-					},
-					{
-						"name": "legelevationneeded",
-						"type": "text"
-					},
-					{
-						"name": "etiology",
-						"type": "text"
-					},
-					{
-						"name": "getdressingsold",
-						"type": "text"
-					},
-					{
-						"name": "margindetail",
-						"type": "text"
-					},
-					{
-						"name": "odor",
-						"type": "text"
-					},
-					{
-						"name": "other",
-						"type": "text"
-					},
-					{
-						"name": "pain",
-						"type": "text"
-					},
-					{
-						"name": "periwound",
-						"type": "text"
-					},
-					{
-						"name": "pressurereduction",
-						"type": "text"
-					},
-					{
-						"name": "roomnumber",
-						"type": "text"
-					},
-					{
-						"name": "secondarydressing",
-						"type": "text"
-					},
-					{
-						"name": "stalledwound",
-						"type": "text"
-					},
-					{
-						"name": "tunnelingcm",
-						"type": "text"
-					},
-					{
-						"name": "tunnelingdesc",
-						"type": "text"
-					},
-					{
-						"name": "underminingcm",
-						"type": "text"
-					},
-					{
-						"name": "underminingdesc",
-						"type": "text"
-					},
-					{
-						"name": "woundstatus",
-						"type": "text"
-					},
-					{
-						"name": "facility",
-						"type": "text"
-					},
-					{
-						"name": "dayswoundactive",
-						"type": "text"
-					},
-					{
-						"name": "widthcm",
-						"type": "text"
-					},
-					{
-						"name": "woundlocation",
-						"type": "text"
-					},
-					{
-						"name": "misc",
-						"type": "text"
-					},
-					{
-						"name": "woundnumber",
-						"type": "text"
-					},
-					{
-						"name": "visitid",
-						"type": "text"
-					},
-					{
-						"name": "signdate",
-						"type": "text"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "fayette"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/elicottcity')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2701,6 +2174,321 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "ellicottcity"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/facilitiessource')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itreatmedisoftcsv",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Active_Facilities_Data_2.8.22.csv",
+						"container": "facilities"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Region",
+						"type": "String"
+					},
+					{
+						"name": "Facility ",
+						"type": "String"
+					},
+					{
+						"name": "Bed Size",
+						"type": "String"
+					},
+					{
+						"name": "Operator",
+						"type": "String"
+					},
+					{
+						"name": "Owner",
+						"type": "String"
+					},
+					{
+						"name": "Regional Clinical Lead",
+						"type": "String"
+					},
+					{
+						"name": "RDCO",
+						"type": "String"
+					},
+					{
+						"name": "iTreat Facility Name",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/fayette')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "fayette"
 				}
 			},
 			"dependsOn": []
@@ -3213,6 +3001,1286 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "fortwashington"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/fulton')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "fulton"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/greenacres')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "greenacres"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/hagersville')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "hagersville"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/hollyhill')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "hollyhill"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/kensington')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "healingpartnersreporting",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "patient_id",
+						"type": "text"
+					},
+					{
+						"name": "patient_firstname",
+						"type": "text"
+					},
+					{
+						"name": "patient_lastname",
+						"type": "text"
+					},
+					{
+						"name": "mrn",
+						"type": "text"
+					},
+					{
+						"name": "last_care_setting",
+						"type": "text"
+					},
+					{
+						"name": "wound_started",
+						"type": "text"
+					},
+					{
+						"name": "last_visit_date",
+						"type": "text"
+					},
+					{
+						"name": "clinician_first_name",
+						"type": "text"
+					},
+					{
+						"name": "clinician_last_name",
+						"type": "text"
+					},
+					{
+						"name": "max_total_area",
+						"type": "text"
+					},
+					{
+						"name": "min_total_area",
+						"type": "text"
+					},
+					{
+						"name": "areacmsq",
+						"type": "text"
+					},
+					{
+						"name": "lengthcm",
+						"type": "text"
+					},
+					{
+						"name": "necrotictissueperc",
+						"type": "text"
+					},
+					{
+						"name": "granulationperc",
+						"type": "text"
+					},
+					{
+						"name": "epitheliumperc",
+						"type": "text"
+					},
+					{
+						"name": "sloughperc",
+						"type": "text"
+					},
+					{
+						"name": "othertissueperc",
+						"type": "text"
+					},
+					{
+						"name": "no_dot_present",
+						"type": "text"
+					},
+					{
+						"name": "no_wound_detected",
+						"type": "text"
+					},
+					{
+						"name": "healingrate",
+						"type": "text"
+					},
+					{
+						"name": "perceepithelizatoin",
+						"type": "text"
+					},
+					{
+						"name": "percgranulation",
+						"type": "text"
+					},
+					{
+						"name": "percslough",
+						"type": "text"
+					},
+					{
+						"name": "acquired_in_house",
+						"type": "text"
+					},
+					{
+						"name": "additional_woundbed_detail",
+						"type": "text"
+					},
+					{
+						"name": "cleanse_wound_width",
+						"type": "text"
+					},
+					{
+						"name": "creamsointments",
+						"type": "text"
+					},
+					{
+						"name": "date_wound_acquired",
+						"type": "text"
+					},
+					{
+						"name": "depthcm",
+						"type": "text"
+					},
+					{
+						"name": "drainamount",
+						"type": "text"
+					},
+					{
+						"name": "draindesc",
+						"type": "text"
+					},
+					{
+						"name": "dressingchangefrequency",
+						"type": "text"
+					},
+					{
+						"name": "dressings",
+						"type": "text"
+					},
+					{
+						"name": "legelevationneeded",
+						"type": "text"
+					},
+					{
+						"name": "etiology",
+						"type": "text"
+					},
+					{
+						"name": "getdressingsold",
+						"type": "text"
+					},
+					{
+						"name": "margindetail",
+						"type": "text"
+					},
+					{
+						"name": "odor",
+						"type": "text"
+					},
+					{
+						"name": "other",
+						"type": "text"
+					},
+					{
+						"name": "pain",
+						"type": "text"
+					},
+					{
+						"name": "periwound",
+						"type": "text"
+					},
+					{
+						"name": "pressurereduction",
+						"type": "text"
+					},
+					{
+						"name": "roomnumber",
+						"type": "text"
+					},
+					{
+						"name": "secondarydressing",
+						"type": "text"
+					},
+					{
+						"name": "stalledwound",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingcm",
+						"type": "text"
+					},
+					{
+						"name": "tunnelingdesc",
+						"type": "text"
+					},
+					{
+						"name": "underminingcm",
+						"type": "text"
+					},
+					{
+						"name": "underminingdesc",
+						"type": "text"
+					},
+					{
+						"name": "woundstatus",
+						"type": "text"
+					},
+					{
+						"name": "facility",
+						"type": "text"
+					},
+					{
+						"name": "dayswoundactive",
+						"type": "text"
+					},
+					{
+						"name": "widthcm",
+						"type": "text"
+					},
+					{
+						"name": "woundlocation",
+						"type": "text"
+					},
+					{
+						"name": "misc",
+						"type": "text"
+					},
+					{
+						"name": "woundnumber",
+						"type": "text"
+					},
+					{
+						"name": "visitid",
+						"type": "text"
+					},
+					{
+						"name": "signdate",
+						"type": "text"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "kensington"
 				}
 			},
 			"dependsOn": []
