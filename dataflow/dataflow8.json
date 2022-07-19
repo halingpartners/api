@@ -100,7 +100,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"select1 filter(facility == 'T-A~Clinton Place T-A-Active Wound Patients, T-A~Clinton Place T-A-Registered for PCC (for iTreatMD only), T-A~Global-Active Wound Patients' || facility =='T-A~Clinton Place T-A-Registered for PCC (for iTreatMD only), T-A~Global-Active Wound Patients' || facility =='T-A~Global-Active Wound Patients, T-A~Clinton Place T-A-Active Wound Patients, T-A~Clinton Place T-A-Registered for PCC (for iTreatMD only)' || facility == 'T-A~Global-Active Wound Patients, T-A~Clinton Place T-A-Registered for PCC (for iTreatMD only)') ~> filter1",
 				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
