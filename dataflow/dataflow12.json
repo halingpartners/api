@@ -1,0 +1,107 @@
+{
+	"name": "dataflow12",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "select1"
+				},
+				{
+					"name": "filter1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          patient_id as string,",
+				"          patient_firtsname as string,",
+				"          patient_lastname as string,",
+				"          mrn as string,",
+				"          last_care_setting as string,",
+				"          wound_started as string,",
+				"          last_visit_date as string,",
+				"          clinician_first_name as string,",
+				"          clinician_last_name as string,",
+				"          max_total_area as string,",
+				"          min_total_area as string,",
+				"          areacmsq as string,",
+				"          lengthcm as string,",
+				"          necrotictissueperc as string,",
+				"          granulationperc as string,",
+				"          epitheliumperc as string,",
+				"          sloughperc as string,",
+				"          othertissueperc as string,",
+				"          no_dot_present as string,",
+				"          no_wound_detected as string,",
+				"          healingrate as string,",
+				"          percepithelizatoin as string,",
+				"          percgranulation as string,",
+				"          percslough as string,",
+				"          acquired_in_house as string,",
+				"          additional_woundbed_details as string,",
+				"          cleanse_wound_with as string,",
+				"          creamsointments as string,",
+				"          date_wound_acquired as string,",
+				"          depthcm as string,",
+				"          drainamount as string,",
+				"          draindesc as string,",
+				"          dressingchangefrequency as string,",
+				"          dressings as string,",
+				"          legelevationneeded as string,",
+				"          etiology as string,",
+				"          getdressingsold as string,",
+				"          margindetail as string,",
+				"          odor as string,",
+				"          other as string,",
+				"          pain as string,",
+				"          periwound as string,",
+				"          pressurereduction as string,",
+				"          roomnumber as string,",
+				"          secondarydressing as string,",
+				"          stalledwound as string,",
+				"          tunnelingcm as string,",
+				"          tunnelingdesc as string,",
+				"          underminingcm as string,",
+				"          underminingdesc as string,",
+				"          woundstatus as string,",
+				"          facility as string,",
+				"          dayswoundactive as string,",
+				"          widthcm as string,",
+				"          woundlocation as string,",
+				"          misc as string,",
+				"          woundnumber as string,",
+				"          visitid as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source1 select(mapColumn(",
+				"          each(match(/* All input columns */ true()),",
+				"               /* Input name */ $$ = $$)",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 filter(facility == 'T-A~Ellicott City T-A-Active Wound Patients, T-A~Ellicott City T-A-Registered for PCC (for iTreatMD only), T-A~Global-Active Wound Patients' || facility == 'T-A~Ellicott City T-A-Registered for PCC (for iTreatMD only), T-A~Global-Active Wound Patients' || facility == 'T-A~Ellicott City T-A-Registered for PCC (for iTreatMD only), T-A~Global-Active Wound Patients, T-A~Ellicott City T-A-Active Wound Patients' || facility == 'T-A~Global-Active Wound Patients, T-A~Ellicott City T-A-Active Wound Patients, T-A~Ellicott City T-A-Registered for PCC (for iTreatMD only)' || facility == 'T-A~Global-Active Wound Patients, T-A~Ellicott City T-A-Registered for PCC (for iTreatMD only)') ~> filter1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
