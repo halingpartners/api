@@ -19040,6 +19040,269 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/woundlogmorningtrigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "anandalepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "anchoragepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "battlefieldparkpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "belprepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "bluepointpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "cedarspipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "clintonpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "clintonplacepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "countrysidepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "creekwoodpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "cumberlandpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "elicottpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "fayettepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "forestvillepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "fortwashingtonpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "fultonpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "greenacrespipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "hagersvillepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "hollyhillpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "kensingtonpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "laurelwoodpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "marleyneckpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "millspipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "mountvernonpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "northwestpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "petersburgpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "pleasantviewpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "silverlakepipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "stonecreekpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "westminsterpipe",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2022-07-22T08:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/anandalepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/anchoragepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/battlefieldparkpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/belprepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/bluepointpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/cedarspipe')]",
+				"[concat(variables('factoryId'), '/pipelines/clintonpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/clintonplacepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/countrysidepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/creekwoodpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/cumberlandpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/elicottpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/fayettepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/forestvillepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/fortwashingtonpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/fultonpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/greenacrespipe')]",
+				"[concat(variables('factoryId'), '/pipelines/hagersvillepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/hollyhillpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/kensingtonpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/laurelwoodpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/marleyneckpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/millspipe')]",
+				"[concat(variables('factoryId'), '/pipelines/mountvernonpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/northwestpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/petersburgpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/pleasantviewpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/silverlakepipe')]",
+				"[concat(variables('factoryId'), '/pipelines/stonecreekpipe')]",
+				"[concat(variables('factoryId'), '/pipelines/westminsterpipe')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -24517,37 +24780,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]",
 				"[concat(variables('factoryId'), '/datasets/countryside')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/woundlogmorningtrigger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "anandalepipe",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2022-07-22T08:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/anandalepipe')]"
 			]
 		}
 	]
