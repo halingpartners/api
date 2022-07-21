@@ -165,6 +165,12 @@
 					"referenceName": "pleasantviewpipe",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "silverlakepipe",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
