@@ -1,0 +1,24 @@
+{
+	"name": "woundlogmorningtrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "anandalepipe",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-07-22T08:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
