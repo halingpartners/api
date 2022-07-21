@@ -117,6 +117,12 @@
 					"referenceName": "hollyhillpipe",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "kensingtonpipe",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
